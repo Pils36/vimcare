@@ -48,8 +48,9 @@ trait Opportunity{
     public function opportunityPosts($state){
 
         $data = DB::table('opportunitypost')
-        ->where('state', '1')->where('poststate', $state)
-        ->orderBy('created_at', 'DESC')->get();
+        ->join('users', 'users.ref_code', '=', 'opportunitypost.ref_code')
+        ->where('opportunitypost.state', '1')->where('opportunitypost.poststate', $state)
+        ->orderBy('opportunitypost.created_at', 'DESC')->get();
 
         return $data;
     }
@@ -60,6 +61,7 @@ trait Opportunity{
         $data = DB::table('estimate')
         ->join('opportunitypost', 'opportunitypost.post_id', '=', 'estimate.opportunity_id')
         ->join('prepareestimate', 'prepareestimate.estimate_id', '=', 'estimate.estimate_id')
+        ->join('users', 'users.ref_code', '=', 'opportunitypost.ref_code')
         ->where('opportunitypost.state', '=', 2)->where('estimate.update_by', $station)
         ->orderBy('estimate.created_at', 'DESC')->get();
 
@@ -72,6 +74,7 @@ trait Opportunity{
         $data = DB::table('estimate')
         ->join('opportunitypost', 'opportunitypost.post_id', '=', 'estimate.opportunity_id')
         ->join('prepareestimate', 'prepareestimate.estimate_id', '=', 'estimate.estimate_id')
+        ->join('users', 'users.ref_code', '=', 'opportunitypost.ref_code')
         ->where('opportunitypost.state', '=', 1)->where('estimate.update_by', $station)
         ->orderBy('estimate.created_at', 'DESC')->get();
 
@@ -80,7 +83,7 @@ trait Opportunity{
 
 
     // Job Done
-    public function jobDone($station){
+    public function jobsDone($station){
 
         $data = DB::table('estimate')
         ->join('opportunitypost', 'opportunitypost.post_id', '=', 'estimate.opportunity_id')

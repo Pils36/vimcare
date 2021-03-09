@@ -54,14 +54,14 @@
                             
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="#"><i class="fa fa-circle-o text-red"></i> {{ (strlen("Appointment") > 20) ? substr("Appointment", 0, 20)."..." : "Appointment" }}</a> </li>
+                            <li><a href="{{ route('view appointments') }}"><i class="fa fa-circle-o text-red"></i> {{ (strlen("Appointment") > 20) ? substr("Appointment", 0, 20)."..." : "Appointment" }}</a> </li>
                             {{--  <small class="label pull-right bg-blue">8</small>  --}}
-                            <li><a href="#"><i class="fa fa-circle-o text-green"></i> {{ (strlen("Opportunity Posts") > 20) ? substr("Opportunity Posts", 0, 20)."..." : "Opportunity Posts" }} </a> </li>
+                            <li><a href="{{ route('view opportunity') }}"><i class="fa fa-circle-o text-green"></i> {{ (strlen("Opportunity Posts") > 20) ? substr("Opportunity Posts", 0, 20)."..." : "Opportunity Posts" }} </a> </li>
                             {{--  <small class="label pull-right bg-red">7</small>  --}}
-                            <li><a href="#"><i class="fa fa-circle-o text-orange"></i> {{ (strlen("Approved Estimates") > 20) ? substr("Approved Estimates", 0, 20)."..." : "Approved Estimates" }}</a></li>
-                            <li><a href="#"><i class="fa fa-circle-o text-red"></i> {{ (strlen("Submitted Estimates") > 20) ? substr("Submitted Estimates", 0, 20)."..." : "Submitted Estimates" }}</a></li>
-                            <li><a href="#"><i class="fa fa-circle-o text-green"></i> {{ (strlen("Job Done") > 20) ? substr("Job Done", 0, 20)."..." : "Job Done" }}</a></li>
-                            <li><a href="#"><i class="fa fa-circle-o text-orange"></i> {{ (strlen("Phone Appointment List") > 20) ? substr("Phone Appointment List", 0, 20)."..." : "Phone Appointment List" }}</a></li>
+                            <li><a href="{{ route('view approved estimates') }}"><i class="fa fa-circle-o text-orange"></i> {{ (strlen("Approved Estimates") > 20) ? substr("Approved Estimates", 0, 20)."..." : "Approved Estimates" }}</a></li>
+                            <li><a href="{{ route('view submitted estimates') }}"><i class="fa fa-circle-o text-red"></i> {{ (strlen("Submitted Estimates") > 20) ? substr("Submitted Estimates", 0, 20)."..." : "Submitted Estimates" }}</a></li>
+                            <li><a href="{{ route('view job done') }}"><i class="fa fa-circle-o text-green"></i> {{ (strlen("Job Done") > 20) ? substr("Job Done", 0, 20)."..." : "Job Done" }}</a></li>
+                            <li><a href="{{ route('view phone appointment list') }}"><i class="fa fa-circle-o text-orange"></i> {{ (strlen("Phone Appointment List") > 20) ? substr("Phone Appointment List", 0, 20)."..." : "Phone Appointment List" }}</a></li>
                         </ul>
                     </li>
 

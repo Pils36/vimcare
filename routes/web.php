@@ -72,6 +72,11 @@ Route::group(['middleware' => ['auth']], function () {
     Route::prefix('userdashboard/opportunity')->group(function () {
 
         Route::get('/appointments', [OpportunityController::class, 'appointments'])->name('view appointments');
+        Route::get('/opportunitypost', [OpportunityController::class, 'opportunityPost'])->name('view opportunity');
+        Route::get('/approvedestimates', [OpportunityController::class, 'approvedEstimates'])->name('view approved estimates');
+        Route::get('/submittedestimates', [OpportunityController::class, 'submittedEstimates'])->name('view submitted estimates');
+        Route::get('/jobdone', [OpportunityController::class, 'jobDone'])->name('view job done');
+        Route::get('/phoneappointment', [OpportunityController::class, 'phoneAppointment'])->name('view phone appointment list');
         Route::post('/closeappointments', [OpportunityController::class, 'closeAppointments'])->name('close appointment');
     });
 

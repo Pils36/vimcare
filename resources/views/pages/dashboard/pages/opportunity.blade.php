@@ -48,7 +48,7 @@
                             <div class="icon">
                                 <i class="ion ion-stats-bars"></i>
                             </div>
-                            <a href="#" class="small-box-footer">Check opportunities around you <i class="fa fa-arrow-circle-right"></i></a>
+                            <a href="{{ route('view opportunity') }}" class="small-box-footer">Check opportunities around you <i class="fa fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
                     <!-- ./col -->
@@ -63,7 +63,7 @@
                             <div class="icon">
                                 <i class="ion ion-pie-graph"></i>
                             </div>
-                            <a href="#" class="small-box-footer">Access approved estimates <i class="fa fa-arrow-circle-right"></i></a>
+                            <a href="{{ route('view approved estimates') }}" class="small-box-footer">Access approved estimates <i class="fa fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
                     <!-- ./col -->
@@ -78,7 +78,7 @@
                             <div class="icon">
                                 <i class="ion ion-stats-bars"></i>
                             </div>
-                            <a href="#" class="small-box-footer">View submitted estimates <i class="fa fa-arrow-circle-right"></i></a>
+                            <a href="{{ route('view submitted estimates') }}" class="small-box-footer">View submitted estimates <i class="fa fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
                     <!-- ./col -->
@@ -93,7 +93,7 @@
                             <div class="icon">
                                 <i class="ion ion-pie-graph"></i>
                             </div>
-                            <a href="#" class="small-box-footer">Maintenance job done <i class="fa fa-arrow-circle-right"></i></a>
+                            <a href="{{ route('view job done') }}" class="small-box-footer">Maintenance job done <i class="fa fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
                     <!-- ./col -->
@@ -108,7 +108,7 @@
                             <div class="icon">
                                 <i class="ion ion-stats-bars"></i>
                             </div>
-                            <a href="#" class="small-box-footer">List of appointments on phone <i class="fa fa-arrow-circle-right"></i></a>
+                            <a href="{{ route('view phone appointment list') }}" class="small-box-footer">List of appointments on phone <i class="fa fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
                     <!-- ./col -->

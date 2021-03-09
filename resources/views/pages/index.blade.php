@@ -22,14 +22,14 @@
                     @auth
 
                     <div class="banner-btn">
-                        <a href="#" class="get-btn">My Dashboard</a>
+                        <a href="{{ route('dashboard') }}" class="get-btn">My Dashboard</a>
                     </div>
                         
                     @endauth
 
                     @guest
                         <div class="banner-btn">
-                            <a href="#" class="get-btn">Get Started</a>
+                            <a href="{{ route('login') }}" class="get-btn">Get Started</a>
                         </div>
                     @endguest
 

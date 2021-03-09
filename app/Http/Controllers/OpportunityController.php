@@ -27,6 +27,63 @@ class OpportunityController extends Controller
     }
 
 
+    public function opportunityPost(){
+
+        $data = array(
+            'opportunityPosts' => $this->opportunityPosts(Auth::user()->state)
+        );
+
+
+        return view('pages.dashboard.pages.myopportunity.opportunitypost')->with(['pages' => 'Opportunity Posts', 'data' => $data]);
+    }
+
+    public function approvedEstimates(){
+
+        $data = array(
+            'approvedestimate' => $this->approvedEstimates(Auth::user()->station_name)
+        );
+
+
+        return view('pages.dashboard.pages.myopportunity.approvedestimates')->with(['pages' => 'Approved Estimates', 'data' => $data]);
+    }
+
+
+    public function submittedEstimates(){
+
+        $data = array(
+            'submittedestimates' => $this->submittedEstimates(Auth::user()->station_name)
+        );
+
+
+
+        return view('pages.dashboard.pages.myopportunity.submittedestimates')->with(['pages' => 'Submitted Estimates', 'data' => $data]);
+    }
+
+
+    public function jobDone(){
+
+        $data = array(
+            'jobdone' => $this->jobsDone(Auth::user()->station_name)
+        );
+
+
+
+        return view('pages.dashboard.pages.myopportunity.jobdone')->with(['pages' => 'Job Done', 'data' => $data]);
+    }
+
+
+    public function phoneAppointment(){
+
+        $data = array(
+            'phoneappointment' => $this->phoneAppointmentList(Auth::user()->station_name)
+        );
+
+
+
+        return view('pages.dashboard.pages.myopportunity.phoneappointment')->with(['pages' => 'Phone Appointment List', 'data' => $data]);
+    }
+
+
 
 
     public function getAppointments(Request $req){
