@@ -34,6 +34,30 @@
     <section class="content">
 
       <div class="row">
+
+        <div class="col-md-12">
+          @if (session('success'))
+
+          <div class="alert alert-success " role="alert">
+            <strong>{{ session('success') }}</strong>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+              
+          @elseif(session('error'))
+
+          <div class="alert alert-error " role="alert">
+            <strong>{{ session('error') }}</strong>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+
+
+          @endif
+        </div>
+        
         
         @if (count($data['phoneappointment']) > 0)
             @foreach ($data['phoneappointment'] as $item)

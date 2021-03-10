@@ -43,7 +43,7 @@
                   <div class="box-header with-border">
                     <div class="user-block">
                       <img class="img-circle" src="https://res.cloudinary.com/pilstech/image/upload/v1600186029/vimnewlogo_pndv6i.png" alt="User Image">
-                      <span class="username"><a href="#">{{ $item->update_by }}</a></span>
+                      <span class="username"><a href="#">{{ strtoupper($item->post_subject) }}</a></span>
                       <span class="description">Total Cost - {{ number_format($item->total_cost, 2) }}</span>
                     </div>
                     <!-- /.user-block -->
@@ -59,7 +59,7 @@
                     
                     <div class="row">
                         <div class="col-md-6">
-                            <p>Service Type: {{ $item->post_subject }}</p>
+                            <p>Service Type: {{ ucwords($item->post_subject) }}</p>
                         </div>
                         <div class="col-md-6">
                             <p>Previous Mileage: {{ $item->post_mileage }}</p>
@@ -88,7 +88,7 @@
 
                             @isset($carrec)
 
-                            @if ($carrec->file != null || $carrec->file != "noImage.png")
+                            @if ($carrec->file != null && $carrec->file != "noImage.png")
                             <img class="attachment-img" src="{{ $carrec->file }}" alt="Attachment Image">
                                 
                             @else
@@ -120,7 +120,7 @@
                     <h4>REPAIR LOCATION INFORMATION</h4>
                     <div class="row">
                         <div class="col-md-6">
-                            <p>ADDRESS: <a href="https://www.google.ng/maps/place/{{ $item->post_service_need }}" target="_blank">{{ $item->post_service_need }}</a></p>
+                            <p>ADDRESS: <a href="https://www.google.ng/maps/place/{{ $item->post_service_need }}" target="_blank"><img src="https://img.icons8.com/dusk/20/000000/region-code.png"/> {{ $item->post_service_need }} </a></p>
                         </div>
                         <div class="col-md-6">
                             <p>STATE: {{ $item->poststate }}</p>

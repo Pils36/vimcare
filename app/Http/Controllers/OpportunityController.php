@@ -37,18 +37,21 @@ class OpportunityController extends Controller
         return view('pages.dashboard.pages.myopportunity.opportunitypost')->with(['pages' => 'Opportunity Posts', 'data' => $data]);
     }
 
-    public function approvedEstimates(){
+    public function approvedEstimate(){
+
+
 
         $data = array(
             'approvedestimate' => $this->approvedEstimates(Auth::user()->station_name)
         );
 
 
+
         return view('pages.dashboard.pages.myopportunity.approvedestimates')->with(['pages' => 'Approved Estimates', 'data' => $data]);
     }
 
 
-    public function submittedEstimates(){
+    public function submittedEstimate(){
 
         $data = array(
             'submittedestimates' => $this->submittedEstimates(Auth::user()->station_name)

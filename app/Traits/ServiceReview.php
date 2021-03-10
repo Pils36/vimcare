@@ -9,7 +9,13 @@ use Illuminate\Support\Facades\DB;
 trait ServiceReview{
     
     // View Service Reviews and Thread
-    public function viewServices(){}
+    public function viewServices($station, $busid){
+        $data = DB::table('rating')
+            ->where('station_name', $station)->where('busID', $busid)
+            ->orderBy('created_at')->get();
+
+        return $data;
+    }
 
 
     public function serviceReviewCount($station){
@@ -19,5 +25,8 @@ trait ServiceReview{
 
         return $data;
     }
+
+
+
     
 }

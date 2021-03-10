@@ -49,6 +49,7 @@
 <script>
       $(function () {
 
+
 // Start Calendar
 
     /* initialize the external events
@@ -112,8 +113,6 @@
         success: function(result){
             if(result.message == "success"){
                 var res = JSON.parse(result.data);
-
-                console.log(res);
 
                 var events = [];
                         if(!!res){
@@ -260,6 +259,81 @@
 
 })
 
+
+function lookupVin(){
+
+var formData = new FormData();
+
+  var spinner = $('.spinnerlookup');
+  var route = "{{ URL('Ajax/vinlookup') }}";
+
+if($('#lookupnumber').val() == ""){
+  swal('Oops!', 'Please provide a valid VIN number', 'error');
+}
+else{
+
+  formData.append("id", 'decode');
+  formData.append("vin", $('#lookupnumber').val());
+
+  doAjax(route, spinner, formData);
+}
+
+}
+
+
+function doAjax(route, spinner, thisdata){
+      $('tbody#vintable').html('');
+        setHeaders();
+            jQuery.ajax({
+                url: route,
+                method: 'post',
+                data: thisdata,
+                cache: false,
+                processData: false,
+                contentType: false,
+                beforeSend: function(){
+                    spinner.removeClass('disp-0');
+                    $('tbody#vintable').html('<tr><td colspan="2" align="center"><img src="https://res.cloudinary.com/pilstech/image/upload/v1603447174/grey_style_zyxc4p.gif" alt="" style="width: 50px; height: 50px;"></td></tr>');
+                },
+                success: function(result){
+                    if(result.message == "success"){
+
+                      $('tbody#vintable').html('<tr><td colspan="2" align="center"><img src="https://res.cloudinary.com/pilstech/image/upload/v1603447174/grey_style_zyxc4p.gif" alt="" style="width: 50px; height: 50px;" class="disp-0"></td></tr>');
+
+                      spinner.addClass('disp-0');
+                       
+                       if(result.action == "vinlookup"){
+                          var res = JSON.parse(result.data);
+
+                          $.each(res.decode, function(v,k){
+                              $('tbody#vintable').append('<tr><td>'+k.label+'</td><td>'+k.value+'</td></tr>');
+                          });
+
+                        }
+                        else{
+                            spinner.addClass('disp-0');
+                            swal(result.title, result.res, result.message);
+                            $('tbody#vintable').html('<tr><td colspan="2" align="center"><img src="https://res.cloudinary.com/pilstech/image/upload/v1603447174/grey_style_zyxc4p.gif" alt="" style="width: 50px; height: 50px;" class="disp-0"></td></tr>');
+                        }
+                    }
+                    else{
+                        spinner.addClass('disp-0');
+                        swal(result.title, result.res, result.message);
+                        $('tbody#vintable').html('<tr><td colspan="2" align="center"><img src="https://res.cloudinary.com/pilstech/image/upload/v1603447174/grey_style_zyxc4p.gif" alt="" style="width: 50px; height: 50px;" class="disp-0"></td></tr>');
+                    }
+                }
+            });
+    }
+
+
+        //Set CSRF HEADERS
+ function setHeaders(){
+    $.ajaxSetup({
+      headers: {
+          'X-CSRF-TOKEN': "{{csrf_token()}}"
+      }
+    });
+ }
 
 function closeAppoint(ref_code){
     $("#ref_booking").val(ref_code);

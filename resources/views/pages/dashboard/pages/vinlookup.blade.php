@@ -20,25 +20,65 @@
 
       <!-- Default box -->
       <div class="box">
-        <div class="box-header with-border">
-          <h3 class="box-title">Title</h3>
-
-          <div class="box-tools pull-right">
-            <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip"
-                    title="Collapse">
-              <i class="fa fa-minus"></i></button>
-            <button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove">
-              <i class="fa fa-times"></i></button>
-          </div>
-        </div>
+        
         <div class="box-body">
-          Start creating your amazing application!
+
+          @if (Auth::user()->plan == "Free" || Auth::user()->plan == "Start Up")
+
+          <div class="row">
+              <div class="col-md-12">
+                  <div class="form-group">
+                    <label for="lookupnumber">VIN Number</label>
+                    <input type="text" name="lookupnumber" id="lookupnumber" class="form-control" placeholder="Enter VIN Number">
+                  </div>
+              </div>
+  
+              <div class="col-md-12">
+                  <div class="form-group">
+                    <button class="btn btn-primary btn-block" onclick="lookupVin()">VIN Look Up <img class="spinnerlookup disp-0" src="https://vimfile.com/img/loader/spin.gif" style="width: 30px; height: 30px;"></button>
+                  </div>
+              </div>
+  
+              <div class="col-md-12 table table-responsive">
+  
+                  <br><br>
+  
+                  <table class="table table-bordered table-striped">
+                      <thead>
+                          <tr>
+                              <th>Label</th>
+                              <th>Value</th>
+                          </tr>
+                      </thead>
+      
+                      <tbody id="vintable">
+                          
+                      </tbody>
+                  </table>
+              </div>
+  
+              
+  
+          </div>
+              
+          @else
+  
+  
+          <div class="row">
+              <div class="col-md-12">
+                  <h3>
+                      This feature is only available to paid users. <a href="#" type="button" class="btn btn-info">Upgrade today</a>
+                  </h3>
+              </div>
+  
+              
+  
+          </div>
+              
+          @endif
         </div>
         <!-- /.box-body -->
-        <div class="box-footer">
-          Footer
-        </div>
-        <!-- /.box-footer-->
+        
       </div>
       <!-- /.box -->
 

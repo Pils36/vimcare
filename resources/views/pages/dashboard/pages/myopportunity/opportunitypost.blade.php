@@ -89,7 +89,7 @@
 
                             @isset($carrec)
 
-                            @if ($carrec->file != null || $carrec->file != "noImage.png")
+                            @if ($carrec->file != null && $carrec->file != "noImage.png")
                             <img class="attachment-img" src="{{ $carrec->file }}" alt="Attachment Image">
                                 
                             @else
@@ -121,7 +121,7 @@
                     <h4>REPAIR LOCATION INFORMATION</h4>
                     <div class="row">
                         <div class="col-md-6">
-                            <p>ADDRESS: <a href="https://www.google.ng/maps/place/{{ $item->post_service_need }}" target="_blank">{{ $item->post_service_need }}</a></p>
+                            <p>ADDRESS: <a href="https://www.google.ng/maps/place/{{ $item->post_service_need }}" target="_blank"><img src="https://img.icons8.com/dusk/20/000000/region-code.png"/> {{ $item->post_service_need }}</a></p>
                         </div>
                         <div class="col-md-6">
                             <p>STATE: {{ $item->poststate }}</p>

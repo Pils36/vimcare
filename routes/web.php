@@ -7,6 +7,9 @@ use App\Http\Controllers\UserDetails;
 use App\Http\Controllers\BusinessPageController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\OpportunityController;
+use App\Http\Controllers\ReviewController;
+use App\Http\Controllers\AppointmentController;
+use App\Http\Controllers\VinController;
 
 /*
 |--------------------------------------------------------------------------
@@ -73,12 +76,29 @@ Route::group(['middleware' => ['auth']], function () {
 
         Route::get('/appointments', [OpportunityController::class, 'appointments'])->name('view appointments');
         Route::get('/opportunitypost', [OpportunityController::class, 'opportunityPost'])->name('view opportunity');
-        Route::get('/approvedestimates', [OpportunityController::class, 'approvedEstimates'])->name('view approved estimates');
-        Route::get('/submittedestimates', [OpportunityController::class, 'submittedEstimates'])->name('view submitted estimates');
+        Route::get('/approvedestimates', [OpportunityController::class, 'approvedEstimate'])->name('view approved estimates');
+        Route::get('/submittedestimates', [OpportunityController::class, 'submittedEstimate'])->name('view submitted estimates');
         Route::get('/jobdone', [OpportunityController::class, 'jobDone'])->name('view job done');
         Route::get('/phoneappointment', [OpportunityController::class, 'phoneAppointment'])->name('view phone appointment list');
         Route::post('/closeappointments', [OpportunityController::class, 'closeAppointments'])->name('close appointment');
     });
+
+
+
+    // Service Review
+    Route::prefix('userdashboard/review')->group(function () {
+
+        Route::post('/reviewresponse/{postid}', [ReviewController::class, 'reviewResponse'])->name('reviewresponse');
+
+    }); 
+
+
+    // Appointment Bookings 
+    Route::prefix('userdashboard/appointments')->group(function () {
+
+        Route::post('/appointmentonphone', [AppointmentController::class, 'phoneAppointment'])->name('appointmentonphone');
+
+    }); 
 
 
 
@@ -88,6 +108,12 @@ Route::group(['middleware' => ['auth']], function () {
 
         Route::post('/getappointments', [OpportunityController::class, 'getAppointments'])->name('getappointments');
         Route::post('/getthisappointment', [OpportunityController::class, 'getThisAppointment'])->name('getthisappointment');
+
+
+        // VIN Lookup
+
+        Route::post('/vinlookup', [VinController::class, 'decodeInfo'])->name('vinlookup');
+
     });
 
     

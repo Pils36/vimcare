@@ -34,7 +34,7 @@ class DashboardController extends Controller
             'opportunityPost' => $this->opportunityPosts(Auth::user()->state),
             'approvedEstimate' => $this->approvedEstimates(Auth::user()->station_name),
             'submitedEstimate' => $this->submittedEstimates(Auth::user()->station_name),
-            'jobDone' => $this->jobDone(Auth::user()->station_name),
+            'jobDone' => $this->jobsDone(Auth::user()->station_name),
             'phoneAppointment' => $this->phoneAppointmentList(Auth::user()->station_name),
         );
 
@@ -42,7 +42,13 @@ class DashboardController extends Controller
     }
 
     public function review(){
-        return view('pages.dashboard.pages.review')->with(['pages' => 'Service Review']);
+
+        $data = array(
+            'myreviews' => $this->viewServices(Auth::user()->station_name, Auth::user()->busID),
+        );
+
+
+        return view('pages.dashboard.pages.review')->with(['pages' => 'Service Review', 'data' => $data]);
     }
 
     public function shopManagement(){

@@ -58,12 +58,15 @@ trait Opportunity{
 
     // Approved Estimates
     public function approvedEstimates($station){
+
         $data = DB::table('estimate')
         ->join('opportunitypost', 'opportunitypost.post_id', '=', 'estimate.opportunity_id')
         ->join('prepareestimate', 'prepareestimate.estimate_id', '=', 'estimate.estimate_id')
         ->join('users', 'users.ref_code', '=', 'opportunitypost.ref_code')
         ->where('opportunitypost.state', '=', 2)->where('estimate.update_by', $station)
         ->orderBy('estimate.created_at', 'DESC')->get();
+
+        
 
         return $data;
     }
