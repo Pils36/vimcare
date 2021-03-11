@@ -112,7 +112,7 @@ Route::group(['middleware' => ['auth']], function () {
 
         // VIN Lookup
 
-        Route::post('/vinlookup', [VinController::class, 'decodeInfo'])->name('vinlookup');
+        Route::post('/vinlookup', [VinController::class, 'decodeInfo'])->name('vinlookups');
 
     });
 
