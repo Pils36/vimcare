@@ -10,6 +10,7 @@ use App\Http\Controllers\OpportunityController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\VinController;
+use App\Http\Controllers\VehicleMaintenanceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -69,9 +70,7 @@ Route::group(['middleware' => ['auth']], function () {
     });
 
 
-    // Opportunity ROutes
-    
-
+    // Opportunity Routes
     Route::prefix('userdashboard/opportunity')->group(function () {
 
         Route::get('/appointments', [OpportunityController::class, 'appointments'])->name('view appointments');
@@ -84,6 +83,19 @@ Route::group(['middleware' => ['auth']], function () {
     });
 
 
+
+    // Shopmanagement Routes
+    Route::prefix('userdashboard/shopmanagement/vehiclemaintenance')->group(function () {
+
+        Route::get('/', [VehicleMaintenanceController::class, 'index'])->name('vehicle maintenance');
+        Route::get('/prepareestimates', [VehicleMaintenanceController::class, 'prepareEstimates'])->name('prepare estimates');
+        Route::get('/findmaintenancerecord', [VehicleMaintenanceController::class, 'findMaintenanceRecord'])->name('find maintenance record');
+        Route::get('/registervehicle', [VehicleMaintenanceController::class, 'registerVehicle'])->name('register vehicle');
+        Route::get('/ivim', [VehicleMaintenanceController::class, 'ivimModel'])->name('ivim');
+        Route::get('/performance', [VehicleMaintenanceController::class, 'performanceModel'])->name('performance');
+        Route::get('/clientlist', [VehicleMaintenanceController::class, 'clientList'])->name('client list');
+        Route::post('/unprocessedtransactions', [VehicleMaintenanceController::class, 'unprocessedTransaction'])->name('unprocessed transactions');
+    });
 
     // Service Review
     Route::prefix('userdashboard/review')->group(function () {

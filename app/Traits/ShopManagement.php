@@ -4,18 +4,23 @@ namespace App\Traits;
 
 use App\Classes\VehicleMaintenance;
 
+use Auth;
+
 trait ShopManagement{
 
 
     // Get Vehicle Maintenace Info
-    public function getVehicleMaintenance(){
+    public function getVehicleMaintenance($station){
 
 
         $getVm = new VehicleMaintenance();
 
-        $data = $getVm->prepareVehicleMaintenance();
+        $data = array(
+            'completeTrans' => $getVm->completedTransactions($station)
+        );
 
-        dd($data);
+        return $data;
+
     } 
 
 
