@@ -194,7 +194,6 @@
                             if(result.message == "success"){
                             var res = JSON.parse(result.data);
 
-                            console.log(res);
 
                               if(res[0].accstate == 0){
                                     status = "<input type='hidden' id='bookingcode' value='"+res[0].ref_code+"'><button type='button' class='btn btn-primary btn-block' onclick=closeAppoint('"+res[0].ref_code+"')>Close Appointment<img class='spinnerbookingcode disp-0' src='https://i.ya-webdesign.com/images/loading-gif-png-5.gif' style='width: 30px; height: 30px;'></button>";
@@ -278,6 +277,345 @@ else{
   doAjax(route, spinner, formData);
 }
 
+};
+
+// $('.searchLicence').keypress(function (e) {
+//   if (e.which == 13) {
+//     // Click Search Btn
+//     $("#licencesearch").click();
+//     return false;
+// });
+
+
+
+// Search by Licence
+function licenceSearch(){
+
+    $("#licencesearch").text('Loading...');
+    var route = "{{ URL('Ajax/licencesearch') }}";
+    var thisdata = {vehicle_licence: $("#licences").val()};
+    var spin = $('.spinnerlicencesearch');
+
+    $("tbody#list").html("");
+
+    if($("#licences").val() == ""){
+      swal('Oops', 'Enter vehicle licence number to search', 'error');
+      $("#licencesearch").text('Search');
+    }
+    else{
+          setHeaders();
+        jQuery.ajax({
+        url: route,
+        method: 'post',
+        data: thisdata,
+        dataType: 'JSON',
+        beforeSend: function(){
+          spin.removeClass('disp-0');
+        },
+        success: function(result){
+          spin.addClass('disp-0');
+            $("#licencesearch").text('Find');
+            $("#licences").val('');
+            if (result.message == "success") {
+                var res = JSON.parse(result.data);
+                var file; var make; var model; var mileage; var service_option; var service_type; var service_item_spec;
+                var manufacturer; var material_cost; var labour_cost; var other_cost; var total_cost; var service_note; var update_by; var payment; var pay_status; var estimate_id; var country = '<?php if(Auth::user()){ echo Auth::user()->country;}?>'; var base;
+                $.each(res, function(v,k){
+                    file = k.file; make = k.make; mileage = k.mileage; service_option = k.service_option; service_type = k.service_type;
+                    service_item_spec = k.service_item_spec; manufacturer = k.manufacturer; material_cost = k.material_cost; labour_cost = k.labour_cost; other_cost = k.other_cost; total_cost = k.total_cost; service_note = k.service_note; update_by = k.update_by; payment = k.payment; estimate_id = k.estimate_id; base = k.country;
+
+                    if(payment == '2'){
+                          pay_status = "PAID";
+                        }
+                        else if(payment == '1'){
+                          pay_status = "NOT PAID";
+                        }
+                        else{
+                          pay_status = "";
+                        }
+
+                        if(estimate_id == null){
+                          view_more = "#";
+                          views = "<a href='#' class='text-center'>-</a>";
+                        }
+                        else{
+                          view_more = "/invoicereport/"+estimate_id;
+                          views = "<a title='View More' style='font-weight: bold; color: darkblue;' href='"+view_more+"' target='_blank'><i type='button' style='padding: 10px;' title='View More' class='fas fa-eye text-danger' style='text-align: center; cursor: pointer;'></i></a>";
+                        }
+
+                    if(file != "noImage.png"){
+                            $("tbody#list").append("<tr><td>"+(v+1)+"</td><td>"+ k.vehicle_licence +"</td><td>"+ k.date +"</td><td>"+ k.service_type +"</td><td>"+k.service_option+"</td><td>"+ k.mileage +"</td><td>"+ k.update_by +", ["+k.name_of_company+"]</td><td><a href='/uploads/"+ k.file +"' target='_blank'>Open file</a></td><td>"+ pay_status +"</td><td style='font-size: 17px; font-weight: bold;'>"+ k.total_cost +"</td><td>"+views+"</td><tr>");
+
+
+                    }else{
+                            $("tbody#list").append("<tr><td>"+(v+1)+"</td><td>"+ k.vehicle_licence +"</td><td>"+k.date+"</td><td>"+ k.service_type +"</td><td>"+k.service_option+"</td><td>"+ k.mileage +"</td><td>"+ k.update_by +", ["+k.name_of_company+"]</td><td>No attachment</td><td>"+ pay_status +"</td><td style='font-size: 17px; font-weight: bold;'>"+ k.total_cost +"</td><td>"+views+"</td><tr>");
+
+
+
+                    }
+
+                });
+
+            }
+            else
+            {
+               $("tbody#list").append("<tr><td colspan='11' align='center'>"+ result.data +"</td><tr>");
+            }
+
+        }
+
+      });
+    }
+
+
+}
+
+
+// Business IVIM/Report FUnction
+function ivimSearch(val){
+  $('div#ivimRec').html('');
+  $('div#reportRec').html('');
+  var route = "{{ URL('Ajax/ivimsearch') }}";
+  var thisdata;
+  var diff; var date; var mileage; var mileSince; var tyreRotate; var inspection; var registration;
+  var diff2; var date; var mileage2; var mileSince2; var tyreRotate2; var inspection2; var registration2;
+  var diff3; var date; var mileage3; var mileSince3; var tyreRotate3; var inspection3; var registration3;
+  var diff4; var date; var mileage4; var mileSince4; var tyreRotate4; var inspection4; var registration4;
+  var diff5; var date; var mileage5; var mileSince5; var tyreRotate5; var inspection5; var registration5;
+
+  var spinner = $('.spinner');
+  if(val == 'ivim'){
+    thisdata = {
+      purpose: val,
+      licence: $('#searchIvim').val(),
+    };
+  }
+
+  if(val == 'report'){
+    thisdata = {
+      purpose: val,
+      licence: $('#searchReport').val(),
+    };
+  }
+
+
+        setHeaders();
+        jQuery.ajax({
+        url: route,
+        method: 'post',
+        data: thisdata,
+        dataType: 'JSON',
+        beforeSend: function(){
+          $('tr > td img').show();
+          $('#ivimSearchbtn').text('Loading');
+          $('#reportSearchbtn').text('Loading');
+        },
+        success: function(result){
+
+          $('#searchIvim').val("");
+          $('#searchReport').val(""),
+
+          $('tr > td img').hide();
+
+          $('#ivimSearchbtn').text('Find');
+          $('#reportSearchbtn').text('Find');
+
+          if(result.message == "success" && result.action == "ivim"){
+            var res0 = JSON.parse(result.data);
+            var res1 = res0.data1;
+            var res2 = res0.data2;
+            var res3 = res0.data3;
+            var res4 = res0.data4;
+            var res5 = res0.data5;
+            var res6 = res0.data6;
+            var res7 = res0.data7;
+
+
+            if(res1 == ''){
+              res1 = 'N/A';
+              date = 'N/A';
+              diff = 'N/A';
+              mileage = 'N/A';
+              mileSince = 'N/A';
+
+            }
+            else{
+              date = res1[0].created_at;
+              diff = dateDiffs(date);
+              mileage = res1[0].mileage;
+              mileSince = mileage - res0.data0.current_mileage;
+
+            }
+            if(res2== ''){
+              res2= 'N/A';
+              date2= 'N/A';
+              diff2= 'N/A';
+              mileage2 = 'N/A';
+              mileSince2 = 'N/A';
+
+            }
+            else{
+              date2 = res2.created_at;
+              diff2 = dateDiffs(date2);
+              mileage2 = res2.mileage;
+              mileSince2 = mileage2 - res0.data0.current_mileage;
+
+            }
+            if(res3== ''){
+              res3= 'N/A';
+              date3= 'N/A';
+              diff3= 'N/A';
+              mileage3 = 'N/A';
+              mileSince3 = 'N/A';
+
+            }
+            else{
+              date3 = res3.created_at;
+              diff3 = dateDiffs(date3);
+              mileage3 = res3.mileage;
+              mileSince3 = mileage3 - res0.data0.current_mileage;
+
+            }
+
+            if(res4== ''){
+              res4= 'N/A';
+              date4= 'N/A';
+              diff4= 'N/A';
+              mileage4 = 'N/A';
+              mileSince4 = 'N/A';
+
+            }
+            else{
+              date4 = res4.created_at;
+              diff4 = dateDiffs(date4);
+              mileage4 = res4.mileage;
+              mileSince4 = mileage4 - res0.data0.current_mileage;
+
+            }
+
+            if(res5== ''){
+              res5= 'N/A';
+              date5= 'N/A';
+              diff5= 'N/A';
+              mileage5 = 'N/A';
+              mileSince5 = 'N/A';
+
+            }
+            else{
+              date5 = res5.created_at;
+              diff5 = dateDiffs(date5);
+              mileage5 = res5.mileage;
+              mileSince5 = mileage5 - res0.data0.current_mileage;
+
+            }
+
+
+
+
+            
+
+
+            $('div#ivimRec').append("<div class='itemheader'><table><tbody><tr><td>"+res0.data0.vehicle_nickname+"</td><td align='right' style='padding-right:20px;'></td></tr></tbody></table></div><div class='itembody'><table style='width: 100%;' class='table table-bordered table-striped'><tbody><tr><td style='font-weight: bold; font-size: 14px;'>Last Oil Change:</td><td>Date: "+date+" </td><td>Day Since: "+diff+"</td><td> Mileage: "+mileage+"</td><td> Mile Since: "+mileSince+"</td></tr><tr><td style='font-weight: bold; font-size: 14px;'>Last Tire Rotation:</td><td>Date: "+date2+"</td><td>Day Since: "+diff2+"</td><td> Mileage: "+mileage2+"</td><td> Mile Since: "+mileSince2+"</td></tr><tr><td style='font-weight: bold; font-size: 14px;'>Last Air Filter:</td><td>Date: "+date3+" </td><td>Day Since: "+diff3+"</td><td> Mileage: "+mileage3+"</td><td> Mile Since: "+mileSince3+"</td></tr><tr><td style='font-weight: bold; font-size: 14px;'>Last Inspection:</td><td>Date: "+date4+" </td><td>Day Since: "+diff4+"</td><td> Mileage: "+mileage4+" </td><td> Mile Since: "+mileSince4+"</td></tr><tr><td style='font-weight: bold; font-size: 14px;'>Last Registration:</td><td>Date: "+date5+" </td><td>Day Since: "+diff5+" </td><td> Mileage: "+mileage5+" </td><td> Mile Since: "+mileSince5+" </td></tr></tbody></table></div>");
+
+          }
+          else if(result.message == "success" && result.action == "report"){
+            var res0 = JSON.parse(result.data);
+            var res6 = res0.data6;
+            var res7 = res0.data7;
+            var res8 = res0.data8;
+            var dayDiff;
+            var avgtotMiles;
+            var avgtotMaint;
+
+            if(res6 == ''){
+              res6 = 'N/A';
+              totMiles = 'N/A';
+
+            }
+            else{
+              totMiles = res6;
+              dayDiff = calcDiffs(res0.data0.created_at, res8.created_at);
+
+              if(dayDiff == 0){
+                avgtotMiles = 0;
+              }
+              else{
+                avgtotMiles = res6 / dayDiff;
+              }
+
+
+
+            }
+
+            if(res7 == ''){
+              res7 = 'N/A';
+              totMaint = 'N/A';
+            }
+            else{
+              totMaint = res7;
+              dayDiff = calcDiffs(res0.data0.created_at, res8.created_at);
+
+              if(dayDiff == 0){
+                avgtotMaint = 0;
+              }
+              else{
+                avgtotMaint = res7 / dayDiff;
+              }
+
+            }
+
+
+            $('div#reportRec').append("<div class='itemheader'><table><tbody><tr><td>"+res0.data0.vehicle_nickname+"</td><td align='right' style='padding-right:20px;'></td></tr></tbody></table></div><div class='itembody'><table class='table table-bordered table-striped'><tbody><tr><td align='left' width='25%' style='font-weight: bold; text-transform: capitalize;'>Total miles driven:</td><td align='right'>"+res6+"</td></tr><tr><td align='left' width='25%' style='font-weight: bold; text-transform: capitalize;'>Avg. miles driven per month:</td><td align='right'>"+parseFloat(avgtotMiles).toFixed(2)+"</td></tr><tr><td align='left' width='25%' style='font-weight: bold; text-transform: capitalize;'>Total maintenance cost:</td><td align='right'>"+res7+"</td></tr><tr><td align='left' width='25%' style='font-weight: bold; text-transform: capitalize;'>Avg. maintenance cost per month:</td><td align='right'>"+parseFloat(avgtotMaint).toFixed(2)+"</td></tr></tbody></table></div>");
+
+          }
+          else{
+            swal('Oops', result.data, result.message);
+          }
+
+
+        }
+
+      });
+}
+
+
+function dateDiffs(created_at){
+  var date1 = new Date(created_at);
+  var date2 = new Date();
+
+  // To calculate the time difference of two dates
+  var Difference_In_Time = date2.getTime() - date1.getTime();
+
+  // To calculate the no. of days between two dates
+  var Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
+
+
+  return Math.round(Difference_In_Days);
+}
+
+
+function calcDiffs(acct_date, maint_date){
+  var date1 = new Date(acct_date);
+  var date2 = new Date(maint_date);
+  var dayRes;
+
+  // To calculate the time difference of two dates
+  var Difference_In_Time = date2.getTime() - date1.getTime();
+
+  // To calculate the no. of days between two dates
+  var Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
+
+
+  if(Difference_In_Days < 30){
+    dayRes = 0;
+  }
+  else if(Difference_In_Days > 30){
+
+    dayRes = Difference_In_Days / 30;
+  }
+
+
+  return Math.round(dayRes);
 }
 
 
@@ -323,10 +661,10 @@ function doAjax(route, spinner, thisdata){
                     }
                 }
             });
-    }
+}
 
 
-        //Set CSRF HEADERS
+//Set CSRF HEADERS
  function setHeaders(){
     $.ajaxSetup({
       headers: {
@@ -341,6 +679,9 @@ function closeAppoint(ref_code){
     $("#visittookplace").click();
     $(".recClose").click();
 }
+
+
+
 </script>
 
 

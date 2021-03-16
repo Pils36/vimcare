@@ -16,7 +16,10 @@ trait ShopManagement{
         $getVm = new VehicleMaintenance();
 
         $data = array(
-            'completeTrans' => $getVm->completedTransactions($station)
+            'completeTrans' => $getVm->completedTransactions($station),
+            'findvehicle' => $getVm->getmaintenanceRecord($station),
+            'findivim' => $getVm->getIvim($station),
+            'clients' => $getVm->myClientList($station),
         );
 
         return $data;

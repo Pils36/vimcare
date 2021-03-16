@@ -94,12 +94,12 @@
                                         </span>
                                     </a>
                                     <ul class="treeview-menu">
-                                        <li><a href="#"><i class="fa fa-circle-o text-red"></i> Prepare Estimate</a></li>
-                                        <li><a href="#"><i class="fa fa-circle-o text-green"></i> Find Maintenance Record</a></li>
-                                        <li><a href="#"><i class="fa fa-circle-o text-orange"></i> Register a Vehicle</a></li>
-                                        <li><a href="#"><i class="fa fa-circle-o text-green"></i> IVIM</a></li>
-                                        <li><a href="#"><i class="fa fa-circle-o text-orange"></i> Performance</a></li>
-                                        <li><a href="#"><i class="fa fa-circle-o text-red"></i> My Client List</a></li>
+                                        <li><a href="{{ route('prepare estimates') }}"><i class="fa fa-circle-o text-red"></i> Prepare Estimate</a></li>
+                                        <li><a href="{{ route('find maintenance record') }}"><i class="fa fa-circle-o text-green"></i> Find Maintenance Record</a></li>
+                                        <li><a href="{{ route('register vehicle') }}"><i class="fa fa-circle-o text-orange"></i> Register a Vehicle</a></li>
+                                        <li><a href="{{ route('ivim') }}"><i class="fa fa-circle-o text-green"></i> IVIM</a></li>
+                                        <li><a href="{{ route('performance') }}"><i class="fa fa-circle-o text-orange"></i> Performance</a></li>
+                                        <li><a href="{{ route('client list') }}"><i class="fa fa-circle-o text-red"></i> My Client List</a></li>
                                     </ul>
                                 </li>
 

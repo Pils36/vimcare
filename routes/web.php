@@ -126,6 +126,12 @@ Route::group(['middleware' => ['auth']], function () {
 
         Route::post('/vinlookup', [VinController::class, 'decodeInfo'])->name('vinlookups');
 
+
+
+        // Find Vehicle Maintenance Record
+        Route::post('/licencesearch', [VehicleMaintenanceController::class, 'licenceSearch'])->name('Licence Search');
+        Route::post('/ivimsearch', [VehicleMaintenanceController::class, 'ivimSearch'])->name('iVIM Search');
+
     });
 
     
