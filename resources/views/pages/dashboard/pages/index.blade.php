@@ -3,6 +3,7 @@
 @extends('layouts.dashboard')
 
 @section('content')
+
     
 
         <div class="content-wrapper">
@@ -112,6 +113,46 @@
                         </div>
                     </div>
                     <!-- ./col -->
+
+                    <div class="col-lg-3 col-xs-6">
+                        <!-- small box -->
+                        <div class="small-box bg-purple">
+                            <div class="inner">
+                                <h3>&nbsp;</h3>
+
+                                <p>Assigned Work Order</p>
+                            </div>
+                            <div class="icon">
+                                <i class="ion ion-stats-bars"></i>
+                            </div>
+                            <a href="#" class="small-box-footer">{{ (Auth::user()->userType == "Licence Holder - Individual" || Auth::user()->userType == "Licence Holder - Business") ? "Assigned Jobs To Mechanics" : "Work Assigned to me" }} <i class="fa fa-arrow-circle-right"></i></a>
+                        </div>
+                    </div>
+                    <!-- ./col -->
+
+                    @if (Auth::user()->userType == "Licence Holder - Individual" || Auth::user()->userType == "Licence Holder - Business")
+
+                    <div class="col-lg-3 col-xs-6">
+                        <!-- small box -->
+                        <div class="small-box bg-navy">
+                            <div class="inner">
+                                <h3>&nbsp;</h3>
+
+                                <p>Dispatched & Scheduling</p>
+                            </div>
+                            <div class="icon">
+                                <i class="ion ion-stats-bars"></i>
+                            </div>
+                            <a href="#" class="small-box-footer">Dispatched and Scheduling <i class="fa fa-arrow-circle-right"></i></a>
+                        </div>
+                    </div>
+                    <!-- ./col -->
+
+                    
+                        
+                    @endif
+
+
                 </div>
                 <!-- /.row -->
 

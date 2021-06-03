@@ -11,7 +11,7 @@ trait ServiceReview{
     // View Service Reviews and Thread
     public function viewServices($station, $busid){
         $data = DB::table('rating')
-            ->where('station_name', $station)->where('busID', $busid)
+            ->where('station_name', $station)->where('busID', $busid)->where('station_name', '!=', NULL)
             ->orderBy('created_at')->get();
 
         return $data;

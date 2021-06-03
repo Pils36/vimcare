@@ -6,8 +6,12 @@ use Illuminate\Http\Request;
 
 use Auth;
 
+use App\Traits\AllLicenceHolders;
+
 class HomeController extends Controller
 {
+
+    use AllLicenceHolders;
     /**
      * Create a new controller instance.
      *
@@ -24,11 +28,17 @@ class HomeController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
 
-
+    // Mobile Mechanics
     public function index()
     {
 
         return view('pages.index')->with(['pages' => 'Home']);
+    }
+
+    public function mmIndex()
+    {
+
+        return view('pages.mobilemechanics.index')->with(['pages' => 'MM Homepage']);
     }
 
     public function askExpert()
@@ -57,6 +67,35 @@ class HomeController extends Controller
     public function tools()
     {
         return view('pages.tools')->with(['pages' => 'Tools']);
+    }
+
+
+    public function licenceHoldersList()
+    {
+
+        $data = [
+            'licenceHolderList' => $this->getLicenceHolders(Auth::user()->country),
+        ];
+
+        return view('pages.mobilemechanics.lhlisting')->with(['pages' => 'Licence Holder Listing', 'data' => $data]);
+    }
+
+
+    public function pricing()
+    {
+        return view('pages.licenceholder.index')->with(['pages' => 'Licence Holder']);
+    }
+
+
+    public function assignedJob()
+    {
+        return view('pages.licenceholder.index')->with(['pages' => 'Licence Holder']);
+    }
+
+
+    public function payStatement()
+    {
+        return view('pages.licenceholder.index')->with(['pages' => 'Licence Holder']);
     }
 
 

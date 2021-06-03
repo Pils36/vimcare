@@ -68,13 +68,11 @@
 
 			<!-- #MENU# -->
 			<div class="menu">
-                <h2 class="logo">{{ (Auth::user()->station_name != NULL) ? Str::substr(Auth::user()->station_name, 0, 2) : Str::substr(Auth::user()->name, 0, 2) }}</h2>
-
+				<h2 class="logo">{{ ($data['personal']->station_name != NULL) ? Str::substr($data['personal']->station_name, 0, 2) : Str::substr($data['personal']->name, 0, 2) }}</h2>
 				<div class="menu-content">
 					<ul>
-
-						<li onclick="location.href='{{ route('MM Homepage') }}'"><a href="{{ route('MM Homepage') }}" data-value="about">HOME</a></li>
-						<li><a class="active" href="#" data-value="about">ABOUT</a></li>
+						<li onclick="location.href='{{ route('Licence Holders') }}'"><a href="{{ route('Licence Holders') }}" data-value="about">HOME</a></li>
+						<li onclick="location.href='{{ route('MM Listing') }}'"><a class="active" href="#" data-value="about">BACK</a></li>
 						{{-- <li><a href="#" data-value="skills">SKILLS</a></li> --}}
 					</ul>
 				</div>
@@ -92,29 +90,17 @@
 				<!-- #ABOUT# -->
 				<section id="about" class="section section-about wow fadeInUp">
 
-                    <br><br>
-                    <center><h1 style="
-                        font-weight: bold;
-                    "><img src="https://img.icons8.com/ios/40/000000/facebook-like--v1.png"/> This is what your page looks like to a visitor</h1><hr></center>
-
 					<div class="profile">
 						<div class="row">
 							<div class="col-sm-4">
 								<div class="photo-profile">
                                     
-									<img id="my_image" @if(Auth::user()->avatar != "") src="{{ Auth::user()->avatar }}" @else src="https://res.cloudinary.com/pilstech/image/upload/v1600186029/vimnewlogo_pndv6i.png" @endif alt="Business Image">
+									<img id="my_image" @if($data['personal']->avatar != "") src="{{ $data['personal']->avatar }}" @else src="https://res.cloudinary.com/pilstech/image/upload/v1600186029/vimnewlogo_pndv6i.png" @endif alt="Business Image">
 								</div>
-								<a style="cursor: pointer;">
-									<div class="download-resume" style="background-color: navy; color: #fff;">
-										<i class="fa fa-cloud-download" aria-hidden="true"></i>
-                                        <span class="text-download">UPDATE AVATAR</span><br>
-                                        <input type="file" name="file" id="file" class="form-control" onchange="previewPicture()">
-									</div>
-                                </a>
 								<a>
 									<div class="download-resume">
 										<i class="fa fa-eye" aria-hidden="true"></i>
-										<span class="text-download">PROFILE VIEW - {{ Auth::user()->profile_view }}</span>
+										<span class="text-download">PROFILE VIEW - {{ $data['personal']->profile_view }}</span>
 									</div>
                                 </a>
 
@@ -127,7 +113,7 @@
 									<h3>SPECIALITIES</h3>
 								</div>
 								<!-- single skill -->
-                                @if(Auth::user()->mechanical_skill == "Yes")
+                                @if($data['personal']->mechanical_skill == "Yes")
                                 <div class="skill">
 									<div class="title-progress">
 										<span class="skill-name">Mechanical Skill: </span>
@@ -155,7 +141,7 @@
                                 @endif
 								<!-- / single skill -->
                                 <!-- single skill -->
-                                @if(Auth::user()->electrical_skill == "Yes")
+                                @if($data['personal']->electrical_skill == "Yes")
 								<div class="skill">
 									<div class="title-progress">
 										<span class="skill-name">Electrical Skill: </span>
@@ -184,7 +170,7 @@
 								<!-- / single skill -->
                                 <!-- single skill -->
 
-                                @if(Auth::user()->transmission_skill == "Yes")
+                                @if($data['personal']->transmission_skill == "Yes")
 								<div class="skill">
 									<div class="title-progress">
 										<span class="skill-name">Transmission Skill: </span>
@@ -212,7 +198,7 @@
                                 @endif
 								<!-- / single skill -->
                                 <!-- single skill -->
-                                @if(Auth::user()->body_work_skill == "Yes")
+                                @if($data['personal']->body_work_skill == "Yes")
 								<div class="skill">
 									<div class="title-progress">
 										<span class="skill-name">Body Work Skill: </span>
@@ -239,7 +225,7 @@
                                 @endif
 								<!-- / single skill -->
                                 <!-- single skill -->
-                                @if(Auth::user()->other_skills == "Yes")
+                                @if($data['personal']->other_skills == "Yes")
 
 								<div class="skill">
 									<div class="title-progress">
@@ -274,7 +260,7 @@
                                 </div>
                                 
                                 <div class="skill">
-									<b>{!! Auth::user()->service_offered !!}</b>
+									<b>{!! $data['personal']->service_offered !!}</b>
                                 </div>
 
                                 <br>
@@ -283,7 +269,7 @@
                                 </div>
                                 
                                 <div class="skill">
-									<b>{!! Auth::user()->hours_of_operation !!}</b>
+									<b>{!! $data['personal']->hours_of_operation !!}</b>
                                 </div>
                                 
                                 <br>
@@ -292,9 +278,9 @@
                                 </div>
                                 
                                 <div class="skill">
-                                    <iframe src="https://www.google.com/maps/embed?{{ Auth::user()->address }}" width="100%" height="auto" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                                    <iframe src="https://www.google.com/maps/embed?{{ $data['personal']->address }}" width="100%" height="auto" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
                                     
-                                    <a type="button" class="btn btn-primary btn-block" href="https://www.google.com/maps/place/{{ Auth::user()->address }}" target="_blank">Visit Address</a>
+                                    <a type="button" class="btn btn-primary btn-block" href="https://www.google.com/maps/place/{{ $data['personal']->address }}" target="_blank">Visit Address</a>
                                 </div>
 
 
@@ -303,14 +289,14 @@
 
 							<div class="col-sm-8">
 								<div class="info-profile">
-									<h2>{{ Auth::user()->station_name }}</h2>
-                                    <h3>{{ Auth::user()->specialization }} <i class="fa fa-check-circle" aria-hidden="true" style="color: green; font-size: 15px;"></i> <span class="text-available" style="font-size: 15px; font-weight: bold;">Claimed</span> </h3>
+									<h2>{{ $data['personal']->station_name }}</h2>
+                                    <h3>{{ $data['personal']->specialization }} <i class="fa fa-check-circle" aria-hidden="true" style="color: green; font-size: 15px;"></i> <span class="text-available" style="font-size: 15px; font-weight: bold;">Claimed</span> </h3>
 
 
 
 									<p>
-                                        @if(Auth::user()->background != "" || Auth::user()->background != NULL)
-                                        {!! Auth::user()->background !!}
+                                        @if($data['personal']->background != "" || $data['personal']->background != NULL)
+                                        {!! $data['personal']->background !!}
                                         @else
                                             No background history
                                         @endif
@@ -340,51 +326,51 @@
                                                 <tbody>
 
 
-                                                @if (isset(Auth::user()->shopreg))
+                                                @if (isset($data['mechanicShop']))
 
                                                     <tr>
                                                         <td>Years of shop or dealer repair experience</td>
-                                                        <td class="td-bold">{{ Auth::user()->shopreg->repair_experience }}</td>
+                                                        <td class="td-bold">{{ $data['mechanicShop']->repair_experience }}</td>
                                                     </tr>
                                                     <tr>
                                                         <td>Full-time jobs have you had in the past five years</td>
-                                                        <td class="td-bold">{{ Auth::user()->shopreg->fulltime_jobs }}</td>
+                                                        <td class="td-bold">{{ $data['mechanicShop']->fulltime_jobs }}</td>
                                                     </tr>
                                                     <tr>
                                                         <td>Hours per week are you willing to work</td>
-                                                        <td class="td-bold">{{ Auth::user()->shopreg->hours_per_week }}</td>
+                                                        <td class="td-bold">{{ $data['mechanicShop']->hours_per_week }}</td>
                                                     </tr>
                                                     <tr>
                                                         <td>How far would you be willing to drive to an appointment?</td>
-                                                        <td class="td-bold">{{ Auth::user()->shopreg->distance_to_drive }}</td>
+                                                        <td class="td-bold">{{ $data['mechanicShop']->distance_to_drive }}</td>
                                                     </tr>
                                                     <tr>
                                                         <td>Cars I want to work on</td>
-                                                        <td class="td-bold">@php $workon = json_decode(Auth::user()->shopreg->carsto_workon); @endphp {{ implode(", ", $workon) }}</td>
+                                                        <td class="td-bold">@php $workon = json_decode($data['mechanicShop']->carsto_workon); @endphp {{ implode(", ", $workon) }}</td>
                                                     </tr>
                                                     <tr>
                                                         <td>I want to work as:</td>
-                                                        <td class="td-bold">{{ Auth::user()->shopreg->work_as }}</td>
+                                                        <td class="td-bold">{{ $data['mechanicShop']->work_as }}</td>
                                                     </tr>
                                                     <tr>
                                                         <td>Certifications I have obtained</td>
-                                                        <td class="td-bold">@php $certifications = json_decode(Auth::user()->shopreg->certifications); @endphp {{ implode(", ", $certifications) }}</td>
+                                                        <td class="td-bold">@php $certifications = json_decode($data['mechanicShop']->certifications); @endphp {{ implode(", ", $certifications) }}</td>
                                                     </tr>
                                                     <tr>
                                                         <td>Services I can perform</td>
-                                                        <td class="td-bold">@php $service_offer = json_decode(Auth::user()->shopreg->service_offer); @endphp {{ implode(", ", $service_offer) }}</td>
+                                                        <td class="td-bold">@php $service_offer = json_decode($data['mechanicShop']->service_offer); @endphp {{ implode(", ", $service_offer) }}</td>
                                                     </tr>
                                                     <tr>
                                                         <td>My Resume</td>
                                                         <td class="td-bold">
-                                                            <a href="{{ Auth::user()->shopreg->resume }}" target="_blank" class="text-primary">View resume</a>
+                                                            <a href="{{ $data['mechanicShop']->resume }}" target="_blank" class="text-primary">View resume</a>
                                                         </td>
                                                     </tr>
 
                                                 @else
 
                                                 <tr>
-                                                    <td align="center"><a href="{{ route('Basic') }}" type="button" class="btn btn-primary btn-block">Update your basic information</a></td>
+                                                    <td align="center">Basic Information Not Available</td>
                                                 </tr>
 
                                                 @endif
@@ -418,181 +404,181 @@
                                                         </tr>
                                                     </thead>
                                                     <tbody>
-                                                        @if (isset(Auth::user()->skillset))
+                                                        @if (isset($data['mechanicSkills']))
 
                                                         <tr>
                                                             <td>Buick</td>
                                                             <td class="td-bold">
-                                                                {{ Auth::user()->skillset->skill_level_buick }}
+                                                                {{ $data['mechanicSkills']->skill_level_buick }}
                                                             </td>
                                                             <td class="td-bold">
-                                                                {{ Auth::user()->skillset->diagnostic_buick }}
+                                                                {{ $data['mechanicSkills']->diagnostic_buick }}
                                                             </td>
                                                         </tr>
                                                         <tr>
                                                             <td>Cadillac</td>
                                                             <td class="td-bold">
-                                                                {{ Auth::user()->skillset->skill_level_cadillac }}
+                                                                {{ $data['mechanicSkills']->skill_level_cadillac }}
                                                             </td>
                                                             <td class="td-bold">
-                                                                {{ Auth::user()->skillset->diagnostic_cadillac }}
+                                                                {{ $data['mechanicSkills']->diagnostic_cadillac }}
                                                             </td>
                                                         </tr>
                                                         <tr>
                                                             <td>Chevrolet</td>
                                                             <td class="td-bold">
-                                                                {{ Auth::user()->skillset->skill_level_chevrolet }}
+                                                                {{ $data['mechanicSkills']->skill_level_chevrolet }}
                                                             </td>
                                                             <td class="td-bold">
-                                                                {{ Auth::user()->skillset->diagnostic_chevrolet }}
+                                                                {{ $data['mechanicSkills']->diagnostic_chevrolet }}
                                                             </td>
                                                         </tr>
                                                         <tr>
                                                             <td>Chrysler</td>
                                                             <td class="td-bold">
-                                                                {{ Auth::user()->skillset->skill_level_chrysler }}
+                                                                {{ $data['mechanicSkills']->skill_level_chrysler }}
                                                             </td>
                                                             <td class="td-bold">
-                                                                {{ Auth::user()->skillset->diagnostic_chrysler }}
+                                                                {{ $data['mechanicSkills']->diagnostic_chrysler }}
                                                             </td>
                                                             
                                                         </tr>
                                                         <tr>
                                                             <td>Dodge</td>
                                                             <td class="td-bold">
-                                                                {{ Auth::user()->skillset->skill_level_dodge }}
+                                                                {{ $data['mechanicSkills']->skill_level_dodge }}
                                                             </td>
                                                             <td class="td-bold">
-                                                                {{ Auth::user()->skillset->diagnostic_dodge }}
+                                                                {{ $data['mechanicSkills']->diagnostic_dodge }}
                                                             </td>
                                                         </tr>
                                                         <tr>
                                                             <td>Ford</td>
                                                             <td class="td-bold">
-                                                                {{ Auth::user()->skillset->skill_level_ford }}
+                                                                {{ $data['mechanicSkills']->skill_level_ford }}
                                                             </td>
                                                             <td class="td-bold">
-                                                                {{ Auth::user()->skillset->diagnostic_ford }}
+                                                                {{ $data['mechanicSkills']->diagnostic_ford }}
                                                             </td>
                                                             
                                                         </tr>
                                                         <tr>
                                                             <td>GMC</td>
                                                             <td class="td-bold">
-                                                                {{ Auth::user()->skillset->skill_level_gmc }}
+                                                                {{ $data['mechanicSkills']->skill_level_gmc }}
                                                             </td>
                                                             <td class="td-bold">
-                                                                {{ Auth::user()->skillset->diagnostic_gmc }}
+                                                                {{ $data['mechanicSkills']->diagnostic_gmc }}
                                                             </td>
                                                             
                                                         </tr>
                                                         <tr>
                                                             <td>GEO</td>
                                                             <td class="td-bold">
-                                                                {{ Auth::user()->skillset->skill_level_geo }}
+                                                                {{ $data['mechanicSkills']->skill_level_geo }}
                                                             </td>
                                                             <td class="td-bold">
-                                                                {{ Auth::user()->skillset->diagnostic_geo }}
+                                                                {{ $data['mechanicSkills']->diagnostic_geo }}
                                                             </td>
                                                             
                                                         </tr>
                                                         <tr>
                                                             <td>Hummer</td>
                                                             <td class="td-bold">
-                                                                {{ Auth::user()->skillset->skill_level_hummer }}
+                                                                {{ $data['mechanicSkills']->skill_level_hummer }}
                                                             </td>
                                                             <td class="td-bold">
-                                                                {{ Auth::user()->skillset->diagnostic_hummer }}
+                                                                {{ $data['mechanicSkills']->diagnostic_hummer }}
                                                             </td>
                                                             
                                                         </tr>
                                                         <tr>
                                                             <td>Jeep</td>
                                                             <td class="td-bold">
-                                                                {{ Auth::user()->skillset->skill_level_jeep }}
+                                                                {{ $data['mechanicSkills']->skill_level_jeep }}
                                                             </td>
                                                             <td class="td-bold">
-                                                                {{ Auth::user()->skillset->diagnostic_jeep }}
+                                                                {{ $data['mechanicSkills']->diagnostic_jeep }}
                                                             </td>
                                                             
                                                         </tr>
                                                         <tr>
                                                             <td>Lincon</td>
                                                             <td class="td-bold">
-                                                                {{ Auth::user()->skillset->skill_level_lincon }}
+                                                                {{ $data['mechanicSkills']->skill_level_lincon }}
                                                             </td>
                                                             <td class="td-bold">
-                                                                {{ Auth::user()->skillset->diagnostic_lincon }}
+                                                                {{ $data['mechanicSkills']->diagnostic_lincon }}
                                                             </td>
                                                             
                                                         </tr>
                                                         <tr>
                                                             <td>Mercury</td>
                                                             <td class="td-bold">
-                                                                {{ Auth::user()->skillset->skill_level_mercury }}
+                                                                {{ $data['mechanicSkills']->skill_level_mercury }}
                                                             </td>
                                                             <td class="td-bold">
-                                                                {{ Auth::user()->skillset->diagnostic_mercury }}
+                                                                {{ $data['mechanicSkills']->diagnostic_mercury }}
                                                             </td>
                                                             
                                                         </tr>
                                                         <tr>
                                                             <td>Oldsmobile</td>
                                                             <td class="td-bold">
-                                                                {{ Auth::user()->skillset->skill_level_oldsmobile }}
+                                                                {{ $data['mechanicSkills']->skill_level_oldsmobile }}
                                                             </td>
                                                             <td class="td-bold">
-                                                                {{ Auth::user()->skillset->diagnostic_oldsmobile }}
+                                                                {{ $data['mechanicSkills']->diagnostic_oldsmobile }}
                                                             </td>
                                                             
                                                         </tr>
                                                         <tr>
                                                             <td>Plymouth</td>
                                                             <td class="td-bold">
-                                                                {{ Auth::user()->skillset->skill_level_plymouth }}
+                                                                {{ $data['mechanicSkills']->skill_level_plymouth }}
                                                             </td>
                                                             <td class="td-bold">
-                                                                {{ Auth::user()->skillset->diagnostic_plymouth }}
+                                                                {{ $data['mechanicSkills']->diagnostic_plymouth }}
                                                             </td>
                                                             
                                                         </tr>
                                                         <tr>
                                                             <td>Pontiac</td>
                                                             <td class="td-bold">
-                                                                {{ Auth::user()->skillset->skill_level_pontiac }}
+                                                                {{ $data['mechanicSkills']->skill_level_pontiac }}
                                                             </td>
                                                             <td class="td-bold">
-                                                                {{ Auth::user()->skillset->diagnostic_pontiac }}
+                                                                {{ $data['mechanicSkills']->diagnostic_pontiac }}
                                                             </td>
                                                             
                                                         </tr>
                                                         <tr>
                                                             <td>Ram</td>
                                                             <td class="td-bold">
-                                                                {{ Auth::user()->skillset->skill_level_ram }}
+                                                                {{ $data['mechanicSkills']->skill_level_ram }}
                                                             </td>
                                                             <td class="td-bold">
-                                                                {{ Auth::user()->skillset->diagnostic_ram }}
+                                                                {{ $data['mechanicSkills']->diagnostic_ram }}
                                                             </td>
                                                             
                                                         </tr>
                                                         <tr>
                                                             <td>Saturn</td>
                                                             <td class="td-bold">
-                                                                {{ Auth::user()->skillset->skill_level_saturn }}
+                                                                {{ $data['mechanicSkills']->skill_level_saturn }}
                                                             </td>
                                                             <td class="td-bold">
-                                                                {{ Auth::user()->skillset->diagnostic_saturn }}
+                                                                {{ $data['mechanicSkills']->diagnostic_saturn }}
                                                             </td>
                                                             
                                                         </tr>
                                                         <tr>
                                                             <td>Tesla</td>
                                                             <td class="td-bold">
-                                                                {{ Auth::user()->skillset->skill_level_tesla }}
+                                                                {{ $data['mechanicSkills']->skill_level_tesla }}
                                                             </td>
                                                             <td class="td-bold">
-                                                                {{ Auth::user()->skillset->diagnostic_tesla }}
+                                                                {{ $data['mechanicSkills']->diagnostic_tesla }}
                                                             </td>
                                                             
                                                         </tr>
@@ -600,7 +586,7 @@
                                                         @else
 
                                                         <tr>
-                                                            <td align="center" colspan="3"><a href="{{ route('Skills') }}" type="button" class="btn btn-primary btn-block">Update your skills</a></td>
+                                                            <td align="center" colspan="3">Skill Information Not Available</td>
                                                         </tr>
                                                             
                                                         @endif
@@ -622,14 +608,14 @@
                                             <div class="card-body">
                                               <table class="table table-bordered">
                                                   <tbody>
-                                                      @if (isset(Auth::user()->toolset))
+                                                      @if (isset($data['mechanicToolSet']))
                                                       <tr>
-                                                        <td class="td-bold">@php $manadatory_tools = json_decode(Auth::user()->toolset->manadatory_tools); @endphp {!! implode(", ", $manadatory_tools) !!}</td>
+                                                        <td class="td-bold">@php $manadatory_tools = json_decode($data['mechanicToolSet']->manadatory_tools); @endphp {!! implode(", ", $manadatory_tools) !!}</td>
                                                       </tr>
                                                       @else
 
                                                       <tr>
-                                                        <td align="center"><a href="{{ route('Tools') }}" type="button" class="btn btn-primary btn-block">Update your tools</a></td>
+                                                        <td align="center">Tool Set Not Available</td>
                                                     </tr>
                                                           
                                                       @endif
@@ -655,7 +641,7 @@
                                             <span class="title-infos"><i class="fas fa-percent"></i> Vimfile Discount</span>
                                         </div>
                                         <div class="col-md-6">
-                                            @if(Auth::user()->vimfile_discount == "Yes")
+                                            @if($data['personal']->vimfile_discount == "Yes")
 
                                             <span class="info"><i class="fa fa-check-circle" aria-hidden="true" style="color: green;"></i></span>
                                             @else
@@ -669,7 +655,7 @@
                                             <span class="title-infos"><i class="fas fa-toolbox"></i> Repair Guaranteed</span>
                                         </div>
                                         <div class="col-md-6">
-                                            @if(Auth::user()->repair_guaranteed == "Yes")
+                                            @if($data['personal']->repair_guaranteed == "Yes")
 
                                             <span class="info"><i class="fa fa-check-circle" aria-hidden="true" style="color: green;"></i></span>
                                             @else
@@ -683,7 +669,7 @@
                                             <span class="title-infos"><i class="fas fa-file-word"></i> Free Estimates</span>
                                         </div>
                                         <div class="col-md-6">
-                                            @if(Auth::user()->free_estimated == "Yes")
+                                            @if($data['personal']->free_estimated == "Yes")
 
                                             <span class="info"><i class="fa fa-check-circle" aria-hidden="true" style="color: green;"></i></span>
                                             @else
@@ -698,7 +684,7 @@
                                             <span class="title-infos"><i class="fas fa-walking"></i> Walks-in Welcome</span>
                                         </div>
                                         <div class="col-md-6">
-                                            @if(Auth::user()->walk_in_specified == "Yes")
+                                            @if($data['personal']->walk_in_specified == "Yes")
 
                                             <span class="info"><i class="fa fa-check-circle" aria-hidden="true" style="color: green;"></i></span>
                                             @else
@@ -713,7 +699,7 @@
                                             <span class="title-infos"><i class="fas fa-heart"></i> Other Added Value</span>
                                         </div>
                                         <div class="col-md-6">
-                                            {{ Auth::user()->other_value_added }}
+                                            {{ $data['personal']->other_value_added }}
                                         </div>
                                         <br><br>
                                         
@@ -721,7 +707,7 @@
                                             <span class="title-infos"><i class="fas fa-pause-circle"></i> Average Waiting Period</span>
                                         </div>
                                         <div class="col-md-6">
-                                            {{ Auth::user()->average_waiting }}
+                                            {{ $data['personal']->average_waiting }}
                                         </div>
 
 
@@ -740,7 +726,7 @@
 											<ul class="ul-info">
 												<li class="li-info">
                                                     <span class="title-info"><i class="fa fa-wifi"></i> Wi-Fi</span>
-                                                    @if(Auth::user()->wifi == "Yes")
+                                                    @if($data['personal']->wifi == "Yes")
 
                                                     <span class="info"><i class="fa fa-check-circle" aria-hidden="true" style="color: green;"></i></span>
                                                     @else
@@ -751,7 +737,7 @@
 												</li>
 												<li class="li-info">
                                                     <span class="title-info"><i class="fas fa-restroom" style="font-size: 14px;"></i> Restroom</span>
-                                                    @if(Auth::user()->restroom == "Yes")
+                                                    @if($data['personal']->restroom == "Yes")
                                                     <span class="info"><i class="fa fa-check-circle" aria-hidden="true" style="color: green;"></i></span>
                                                     @else
                                                     <span class="info"><i class="fa fa-window-close" aria-hidden="true" style="color: red;"></i></span>
@@ -766,7 +752,7 @@
 											<ul class="ul-info">
                                                 <li class="li-info">
                                                     <span class="title-info"><i class="fa fa-bed"></i> Lounge</span>
-                                                    @if(Auth::user()->lounge == "Yes")
+                                                    @if($data['personal']->lounge == "Yes")
 
                                                     <span class="info"><i class="fa fa-check-circle" aria-hidden="true" style="color: green;"></i></span>
                                                     @else
@@ -776,7 +762,7 @@
                                                 
 												<li class="li-info">
                                                     <span class="title-info"><i class="fas fa-parking" style="font-size: 12px"></i> Park space</span>
-                                                    @if(Auth::user()->parking_space == "Yes")
+                                                    @if($data['personal']->parking_space == "Yes")
                                                     <span class="info"><i class="fa fa-check-circle" aria-hidden="true" style="color: green;"></i></span>
                                                     @else
                                                     <span class="info"><i class="fa fa-window-close" aria-hidden="true" style="color: red;"></i></span>
@@ -799,10 +785,10 @@
                                             <span class="title-infos"><i class="fas fa-glass-cheers"></i> Year Established</span>
                                         </div>
                                         <div class="col-md-6">
-                                            @if(Auth::user()->year_established == "Yes")
+                                            @if($data['personal']->year_established == "Yes")
 
                                             @else
-                                                <b>{{ date('F Y', strtotime(Auth::user()->year_established)) }}</b>
+                                                <b>{{ date('F Y', strtotime($data['personal']->year_established)) }}</b>
                                             @endif
                                             
                                         </div>
@@ -812,7 +798,7 @@
                                             <span class="title-infos"><i class="fas fa-hourglass-start"></i> Year Started Since</span>
                                         </div>
                                         <div class="col-md-6">
-                                            <b>{{ date('F Y', strtotime(Auth::user()->year_started_since)) }}</b>
+                                            <b>{{ date('F Y', strtotime($data['personal']->year_started_since)) }}</b>
                                         </div>
                                         <br><br>
                                         
@@ -821,7 +807,7 @@
                                             <span class="title-infos"><i class="fas fa-graduation-cap"></i> Year(s) of practical experience</span>
                                         </div>
                                         <div class="col-md-6">
-                                            <b>{{ Auth::user()->year_of_practice }}</b>
+                                            <b>{{ $data['personal']->year_of_practice }}</b>
                                         </div>
                                         <br><br>
 
@@ -832,8 +818,8 @@
                                     <h2>Images & Photos</h2>
                                     <hr>
                                     <div class="row">
-                                        @if(Auth::user()->photo_video != "")
-                                        <?php $splitfile = explode(",", Auth::user()->photo_video);?>
+                                        @if($data['personal']->photo_video != "")
+                                        <?php $splitfile = explode(",", $data['personal']->photo_video);?>
 
                                             @foreach ($splitfile as $image)
                                                 @if ($image != "")
@@ -861,32 +847,32 @@
 
                                     <br><br>
 
-                                    @if(Auth::user()->facebook != "" || Auth::user()->twitter || Auth::user()->instagram)
+                                    @if($data['personal']->facebook != "" || $data['personal']->twitter || $data['personal']->instagram)
                                     <div class="col-sm-12">
 											<span class="title-links">Social Links</span>
 											<ul class="ul-social-links">
-                                                @if(Auth::user()->facebook)
+                                                @if($data['personal']->facebook)
 
                                                 <li class="li-social-links">
-													<a href="{{ Auth::user()->facebook }}" data-tootik="Facebook" data-tootik-conf="square" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+													<a href="{{ $data['personal']->facebook }}" data-tootik="Facebook" data-tootik-conf="square" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
                                                 </li>
                                                 
                                                 @endif
                                                 
                                                 
-                                                @if(Auth::user()->twitter)
+                                                @if($data['personal']->twitter)
 
                                                 <li class="li-social-links">
-													<a href="{{ Auth::user()->twitter }}" data-tootik="Twitter" data-tootik-conf="square" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+													<a href="{{ $data['personal']->twitter }}" data-tootik="Twitter" data-tootik-conf="square" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
                                                 </li>
                                                 
                                                 @endif
 
 
-                                                @if(Auth::user()->instagram)
+                                                @if($data['personal']->instagram)
 
                                                 <li class="li-social-links">
-													<a href="{{ Auth::user()->instagram }}" data-tootik="Instagram" data-tootik-conf="square" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+													<a href="{{ $data['personal']->instagram }}" data-tootik="Instagram" data-tootik-conf="square" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
                                                 </li>
                                                 
                                                 @endif
@@ -949,56 +935,6 @@
             swal('Hey!', 'This feature is coming soon to your screen', 'info');
         }
 
-        function previewPicture(){
-            var formData = new FormData();
-            var route = "{{ URL('Ajax/updatebusinessLogo') }}";
-            var imageReader = new FileReader();
-            imageReader.readAsDataURL(document.getElementById('file').files[0]);
-
-            imageReader.onload = function(imageEvent){
-                document.getElementById('my_image').src = imageEvent.target.result;
-            };
-
-            // Do Ajax Update Logo
-            var fileSelect = document.getElementById("file");
-            if(fileSelect.files && fileSelect.files.length == 1){
-                var file = fileSelect.files[0]
-                formData.set("file", file , file.name);
-            }
-
-
-                setHeaders();
-                jQuery.ajax({
-                url: route,
-                method: 'post',
-                data: formData,
-                cache: false,
-                processData: false,
-                contentType: false,
-                dataType: 'JSON',
-                
-                success: function(result){
-                    $("#file").val('');
-
-                    if(result.message == "success"){
-                        iziToast.success({
-                            title: 'Good',
-                            message: 'Successfully uploaded',
-                        });
-                    }
-                    else{
-                        iziToast.error({
-                            title: 'Oops!',
-                            message: 'Cannot upload',
-                        });
-                    }
-
-                    
-                }
-
-            });
-
-        };
 
             //Set CSRF HEADERS
             function setHeaders(){

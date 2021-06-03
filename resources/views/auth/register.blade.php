@@ -60,6 +60,9 @@
                                     <div class="col-lg-12 ">
                                         <div class="form-group">
                                             <label for="name"><span class="reqfield">*</span> Your fullname</label>
+
+                                            <input type="hidden" name="userType" id="userType" value="{{ Request::get('user') }}">
+
                                             <input type="text" name="name" id="name" class="form-control @error('name') is-invalid @enderror" required
                                                 data-error="Please enter your fullname" placeholder="Fullname" value="{{ old('name') }}">
 

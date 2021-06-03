@@ -155,7 +155,7 @@
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div class="pull-left">
-                  <a href="#" class="btn btn-default btn-flat">Profile</a>
+                  <a href="{{ route('Business Page') }}" class="btn btn-default btn-flat" target="_blank">Profile</a>
                 </div>
                 <div class="pull-right">
                   <a href="javascript:void()" class="btn btn-default btn-flat" onclick="$('#logout-form').submit()">Sign out</a>

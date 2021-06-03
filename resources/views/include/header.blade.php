@@ -81,7 +81,7 @@
                 </a>
                 <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                     <ul class="navbar-nav m-auto">
-
+                        @guest
                         <li class="nav-item">
                             <a href="{{ route('home') }}" class="nav-link active">
                                 Home
@@ -102,6 +102,32 @@
                                 Ask Expert
                             </a>
                         </li>
+
+                        @endguest
+
+
+                        @auth
+                            <li class="nav-item">
+                                <a href="{{ route('LH Listing') }}" class="nav-link">
+                                    LH Listing
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                    Plan & Pricing
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                    Assigned Job
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                    Pay Statement
+                                </a>
+                            </li>
+                        @endauth
 
                         {{-- <li class="nav-item">
                             <a href="#" class="nav-link active">
@@ -222,7 +248,7 @@
                                 @guest
 
                                 <li class="nav-item">
-                                    <a href="{{ route('register') }}" class="nav-link">
+                                    <a href="{{ route('register', 'user=mobilemechanics') }}" class="nav-link">
                                         Sign Up
                                     </a>
                                 </li>
@@ -275,39 +301,13 @@
                             </ul>
                         </li>
                         
-                        {{-- <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                Shop
-                                <i class='bx bx-chevron-down'></i>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li class="nav-item">
-                                    <a href="shop.html" class="nav-link">
-                                        Shop
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="cart.html" class="nav-link">
-                                        Cart
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="checkout.html" class="nav-link">
-                                        Checkout
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="shop-details.html" class="nav-link">
-                                        Shop Details
-                                    </a>
-                                </li>
-                            </ul>
-                        </li> --}}
-                        {{-- <li class="nav-item">
-                            <a href="contact.html" class="nav-link">
-                                Contact
-                            </a>
-                        </li> --}}
+                        @guest
+                            <li class="nav-item">
+                                <a href="{{ route('Licence Holders') }}" class="nav-link" style="text-decoration: underline; font-weight: bold;">
+                                    Are you a Licence Holder?
+                                </a>
+                            </li>
+                        @endguest
                     </ul>
                     {{-- <div class="nav-btn">
                         <a href="#" class="default-btn">

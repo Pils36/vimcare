@@ -5,6 +5,7 @@
 @endif
 
 @include('include.header')
+
 @yield('content')
 
 @auth
@@ -14,3 +15,6 @@
 @include('include.message')
 @include('include.footer')
 @include('include.footerjs')
+
+
+

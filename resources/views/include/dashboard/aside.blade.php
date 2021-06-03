@@ -10,7 +10,7 @@
                     </div>
                     <div class="pull-left info">
                         <p>{{ Auth::user()->name }}</p>
-                        <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+                        <a href="#"><i class="fa fa-circle text-success"></i> {{ Auth::user()->ref_code }}</a>
                     </div>
                 </div>
                 {{-- <!-- search form -->
@@ -37,7 +37,7 @@
                         </a>
                         <ul class="treeview-menu">
                             <li class="active"><a href="{{ route('dashboard') }}"><i class="fa fa-circle-o text-red"></i> Dashboard</a></li>
-                            <li><a href="{{ route('home') }}"><i class="fa fa-circle-o text-green"></i> Return Home</a></li>
+                            <li><a href="{{ route('MM Homepage') }}"><i class="fa fa-circle-o text-green"></i> Return Home</a></li>
                         </ul>
                     </li>
                     

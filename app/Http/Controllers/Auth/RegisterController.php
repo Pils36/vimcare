@@ -79,7 +79,23 @@ class RegisterController extends Controller
         $letter = chr(rand(65,90));
         $ref_code = $letter.mt_rand(1000, 9999);
 
+        $userType = "";
+
+        if($request->userType == "mobilemechanics"){
+            $userType = "Certified Professional";
+        }
         
+        elseif($request->userType == "licenceholderindividual"){
+            $userType = "Licence Holder - Individual";
+        }
+
+        elseif($request->userType == "licenceholderbusiness"){
+            $userType = "Licence Holder - Business";
+        }
+
+        else{
+            $userType = "Certified Professional";
+        }
         
 
         return User::create([
@@ -87,7 +103,7 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'phone_number' => $data['phone_number'],
-            'userType' => 'Vim Care',
+            'userType' => $userType,
             'password' => Hash::make($data['password']),
             'api_token' => uniqid(),
             'plan' => 'Super',
