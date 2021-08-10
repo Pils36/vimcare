@@ -12,11 +12,9 @@
             <div class="col-lg-6">
                 <div class="banner-content">
                     <span>Welcome to Our Service</span>
-                    <h1>We Make Car Repair Hassle Free</h1>
+                    <h1>Receive Auto Repairs From Anywhere.</h1>
                     <p>
-                        We are always ready to give you one of the best service. This will make
-                        a good image on the best
-                        service for us & will help from it.
+                        Our Mechanics are always available for your automotive needs. Whether it’s at home or at work, we will meet you at your most convenient location.
                     </p>
 
                     @auth
@@ -83,40 +81,40 @@
     <div class="container">
         <div class="section-title text-center">
             <span class="span-bg">Why Choose Us?</span>
-            <h2>We Have the Plan for You to Give You Best </h2>
+            {{-- <h2>We Have the Plan for You to Give You Best </h2> --}}
         </div>
         <div class="row pt-45">
             <div class="col-lg-4 col-sm-6">
-                <div class="choose-item">
+                <div class="choose-item" style="height: 100%">
                     <div class="choose-item-icon one-bg">
                         <i class='bx bx-help-circle'></i>
                     </div>
-                    <h3>Problem Solver</h3>
-                    <p>We have the best service for you to make and this is one of the best service.</p>
+                    <h3>Auto Repairs Made Seamless</h3>
+                    <p>Use our fully featured website or mobile app to connect with a mechanic, set-up an appointment, and start driving smoothly again.</p>
                     <a href="#" class="read-more">
                         Read More <i class="bx bx-right-arrow-alt"></i>
                     </a>
                 </div>
             </div>
             <div class="col-lg-4 col-sm-6">
-                <div class="choose-item">
+                <div class="choose-item" style="height: 100%">
                     <div class="choose-item-icon two-bg">
                         <i class='bx bx-time'></i>
                     </div>
-                    <h3>On-time Deliveries</h3>
+                    <h3>Get A Quote</h3>
                     <p>We have the best service for you to make and this is one of the best service.</p>
                     <a href="#" class="read-more">
-                        Read More <i class="right-icon bx bx-right-arrow-alt"></i>
+                        Request a Quote <i class="right-icon bx bx-right-arrow-alt"></i>
                     </a>
                 </div>
             </div>
             <div class="col-lg-4 col-sm-6 offset-lg-0 offset-sm-3">
-                <div class="choose-item">
+                <div class="choose-item" style="height: 100%">
                     <div class="choose-item-icon three-bg">
                         <i class='bx bx-bulb'></i>
                     </div>
-                    <h3>Services by Experts</h3>
-                    <p>We have the best service for you to make and this is one of the best service.</p>
+                    <h3>Satisfaction Guaranteed</h3>
+                    <p>We include a 12-month / 19,000 Km warranty with any and all of our automotive repair services. </p>
                     <a href="#" class="read-more">
                         Read More <i class="right-icon bx bx-right-arrow-alt"></i>
                     </a>
@@ -127,7 +125,7 @@
 </div>
 
 
-<div class="about-area pb-70 disp-0">
+<div class="about-area pb-70">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-6">
@@ -138,34 +136,42 @@
             <div class="col-lg-6">
                 <div class="about-content">
                     <div class="section-title">
-                        <span class="span-bg">About Us</span>
-                        <h2>We Have 20+ Years of Service Experience for You</h2>
-                        <p>
-                            We have a lots of plan to make a good and best & one of the most modern car for you. We
-                            have a good experience and a
-                            good image on the global sector.
-                        </p>
+                        <span class="span-bg">Services</span>
+                        {{-- <h2>We Have 20+ Years of Service Experience for You</h2> --}}
+                        
                     </div>
                     <ul>
                         <li>
                             <i class='bx bx-check-circle'></i>
-                            Customer Satisfaction
+                            Oil Change
                         </li>
                         <li>
                             <i class='bx bx-check-circle'></i>
-                            Latest & Modern Shop
+                            Car Is Not Starting Diagnostic
                         </li>
                         <li>
                             <i class='bx bx-check-circle'></i>
-                            Expertise Diagnostics
+                            Check Engine Light Diagnostic
                         </li>
                         <li>
                             <i class='bx bx-check-circle'></i>
-                            Fair Pricing
+                            Pre-Purchase Vehicle Inspection
                         </li>
                         <li>
                             <i class='bx bx-check-circle'></i>
-                            Expert Care
+                            Battery Replacement
+                        </li>
+                        <li>
+                            <i class='bx bx-check-circle'></i>
+                            Brakepad Replacement
+                        </li>
+                        <li>
+                            <i class='bx bx-check-circle'></i>
+                            Tire Change
+                        </li>
+                        <li>
+                            <i class='bx bx-check-circle'></i>
+                            More...
                         </li>
                     </ul>
                 </div>
@@ -669,6 +675,5 @@
         </div>
     </div>
 </div>
-
 
 @endsection
