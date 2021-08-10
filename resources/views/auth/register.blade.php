@@ -45,10 +45,8 @@
                             <div class="section-title text-center">
                                 {{--  <h2>Create an Account!</h2>  --}}
                                 <h5 class="text-center">
-                                    Congratulations on your first step in becoming a Mobile Mechanic!
-                                </h5>
-                                <h5 class="text-center">
-                                    Please complete the application by filling out the information below.
+                                    Fill out the form below to begin registering as one our of newest mechanics to the platform! 
+(Form Info: Name, Contact, Certifications?, etc.)
                                 </h5>
                                 
                                 <span class="span-bg">Basic</span>
