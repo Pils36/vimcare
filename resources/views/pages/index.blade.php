@@ -91,7 +91,7 @@
                     </div>
                     <h3>Auto Repairs Made Seamless</h3>
                     <p>Use our fully featured website or mobile app to connect with a mechanic, set-up an appointment, and start driving smoothly again.</p>
-                    <a href="#" class="read-more">
+                    <a href="{{ route('About Us') }}" class="read-more">
                         Read More <i class="bx bx-right-arrow-alt"></i>
                     </a>
                 </div>
@@ -103,7 +103,7 @@
                     </div>
                     <h3>Get A Quote</h3>
                     <p>We have the best service for you to make and this is one of the best service.</p>
-                    <a href="#" class="read-more">
+                    <a href="{{ route('Quote') }}" class="read-more">
                         Request a Quote <i class="right-icon bx bx-right-arrow-alt"></i>
                     </a>
                 </div>
@@ -130,7 +130,7 @@
         <div class="row align-items-center">
             <div class="col-lg-6">
                 <div class="about-img-2">
-                    <img src="assets/img/about/about-img2.jpg" alt="Images">
+                    <img src="https://img.freepik.com/free-photo/asian-car-mechanic-auto-repair-shop-is-checking-engine-customers-who-use-cars-repair-services-mechanic-will-work-garage_140555-248.jpg?size=626&ext=jpg" alt="Images">
                 </div>
             </div>
             <div class="col-lg-6">
