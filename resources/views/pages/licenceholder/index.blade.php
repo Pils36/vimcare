@@ -130,7 +130,7 @@
         <div class="row align-items-center">
             <div class="col-lg-6">
                 <div class="about-img-2">
-                    <img src="assets/img/about/about-img2.jpg" alt="Images">
+                    <img src="https://img.freepik.com/free-photo/asian-car-mechanic-auto-repair-shop-is-checking-engine-customers-who-use-cars-repair-services-mechanic-will-work-garage_140555-248.jpg?size=626&ext=jpg" alt="Images">
                 </div>
             </div>
             <div class="col-lg-6">
