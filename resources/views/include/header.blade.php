@@ -9,7 +9,7 @@
                                 <div class="head-icon">
                                     <i class='bx bx-home-smile'></i>
                                 </div>
-                                <a href="#">10 George St. North, Brampton ON L6X1R2, Canada</a>
+                                <a href="#">Professional File Inc <br> 10 George St. North, Brampton ON L6X1R2, Canada</a>
                             </li>
                             <li>
                                 <div class="head-icon">
@@ -92,13 +92,13 @@
                                 Blog
                             </a>
                         </li>
-                        <li class="nav-item">
+                        <!--<li class="nav-item">
                             <a href="#" class="nav-link">
                                 Search Available Locations
                             </a>
-                        </li>
+                        </li>-->
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{{ route('Ask Expert') }}" class="nav-link">
                                 Ask Expert
                             </a>
                         </li>
@@ -249,12 +249,12 @@
 
                                 <li class="nav-item">
                                     <a href="{{ route('register', 'user=mobilemechanics') }}" class="nav-link">
-                                        Sign Up
+                                        Mechanic
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{ route('login') }}" class="nav-link">
-                                        Login
+                                    <a href="{{ route('Licence Holders') }}" class="nav-link">
+                                        Business Owner
                                     </a>
                                 </li>
                                     
@@ -300,13 +300,90 @@
                                 
                             </ul>
                         </li>
+
+                             <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                @auth
+                                {{ Auth::user()->name }}
+                                @endauth 
+
+                                @guest
+                                Explore VimFile
+                                    
+                                @endguest
+
+                                <i class='bx bx-chevron-down'></i>
+                            </a>
+                            <ul class="dropdown-menu">
+
+
+                                @guest
+
+                                <li class="nav-item">
+                                    <a href="https://soar.vimfile.com/" target="_blank" class="nav-link">
+                                        SOAR
+                                    </a>
+                                </li>
+                                 <li class="nav-item">
+                                    <a href="https://vimfile.com/" target="_blank" class="nav-link">
+                                        BusyWrench
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="https://autodealer.vimfile.com/" target="_blank" class="nav-link">
+                                        Auto dealer
+                                    </a>
+                                </li>
+                                    
+                                @endguest
+
+                                @auth
+                                    <li class="nav-item">
+
+                                        @if ($pages == "Home" && (isset(Auth::user()->shopreg) == false || isset(Auth::user()->skillset) == false || isset(Auth::user()->toolset) == false))
+
+                                        <a href="javascript:void()" class="nav-link" onclick="popUp()">
+                                            My Dashboard
+                                        </a>
+
+                                        @else
+
+                                        <a href="{{ route('dashboard') }}" class="nav-link">
+                                            My Dashboard
+                                        </a>
+
+                                        @endif
+
+                                        
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="{{ route('Business Page') }}" class="nav-link">
+                                            Business Page
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="javascript:void()" class="nav-link" onclick="$('#logout-form').submit()">
+                                            Logout
+                                        </a>
+
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            @csrf
+                                        </form>
+                  
+
+                                    </li>
+                                @endauth
+
+                                
+                            </ul>
+                            </li>
                         
                         @guest
-                            <li class="nav-item">
+                            <!--<li class="nav-item">
                                 <a href="{{ route('Licence Holders') }}" class="nav-link" style="text-decoration: underline; font-weight: bold;">
                                     Are you a Licence Holder?
                                 </a>
-                            </li>
+                            </li>-->
                         @endguest
                     </ul>
                     {{-- <div class="nav-btn">

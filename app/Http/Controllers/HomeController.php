@@ -41,6 +41,21 @@ class HomeController extends Controller
         return view('pages.mobilemechanics.index')->with(['pages' => 'MM Homepage']);
     }
 
+    public function askexpart()
+    {
+        return view('pages.askexpart')->with(['pages' => 'Ask Expart']);
+    }
+
+    public function aboutus()
+    {
+        return view('pages.aboutus')->with(['pages' => 'About Us']);
+    }
+
+     public function quote()
+    {
+        return view('pages.quote')->with(['pages' => 'Quote']);
+    }
+
     public function askExpert()
     {
         return view('pages.askexpert')->with(['pages' => 'Ask Experts']);

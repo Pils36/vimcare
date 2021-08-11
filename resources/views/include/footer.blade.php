@@ -67,11 +67,11 @@
                         <ul class="footer-list-two">
                             {{-- <li>
                                 <i class='bx bx-time'></i>
-                                Sun - Fri: 8.00am - 6.00pm
+                                Sun - Fri: 8.00am - 6.00pmb
                             </li> --}}
                             <li>
                                 <i class='bx bx-home-smile'></i>
-                                <a href="#">10 George St. North, Brampton ON L6X1R2, Canada</a>
+                                <a href="#">Professional File lnc,<br>10 George St. North, Brampton ON L6X1R2, Canada</a>
                             </li>
                             <li>
                                 <i class='bx bx-phone'></i>
