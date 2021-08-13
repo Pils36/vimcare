@@ -9,7 +9,7 @@
                                 <div class="head-icon">
                                     <i class='bx bx-home-smile'></i>
                                 </div>
-                                <a href="#">Professionals File Inc, <br> 10 George St. North, Brampton ON L6X1R2, Canada</a>
+                                <a href="#">VIMcare By VIMfile</a>
                             </li>
                             <li>
                                 <div class="head-icon">
@@ -102,6 +102,17 @@
                                 Ask Expert
                             </a>
                         </li>
+
+                         <li class="nav-item">
+                                    <a href="{{ route('register', 'user=mobilemechanics') }}" class="nav-link">
+                                        Mechanic
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('Licence Holders') }}" class="nav-link">
+                                        Business Owner
+                                    </a>
+                                </li>
 
                         @endguest
 
@@ -230,7 +241,7 @@
                             </ul>
                         </li> --}}
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <!--<a href="#" class="nav-link">
                                 @auth
                                 {{ Auth::user()->name }}
                                 @endauth 
@@ -241,22 +252,13 @@
                                 @endguest
 
                                 <i class='bx bx-chevron-down'></i>
-                            </a>
+                            </a>-->
                             <ul class="dropdown-menu">
 
 
                                 @guest
 
-                                <li class="nav-item">
-                                    <a href="{{ route('register', 'user=mobilemechanics') }}" class="nav-link">
-                                        Mechanic
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="{{ route('Licence Holders') }}" class="nav-link">
-                                        Business Owner
-                                    </a>
-                                </li>
+                               
                                     
                                 @endguest
 
