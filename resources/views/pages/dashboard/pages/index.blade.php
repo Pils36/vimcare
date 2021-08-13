@@ -125,12 +125,12 @@
                             <div class="icon">
                                 <i class="ion ion-stats-bars"></i>
                             </div>
-                            <a href="#" class="small-box-footer">{{ (Auth::user()->userType == "Licence Holder - Individual" || Auth::user()->userType == "Licence Holder - Business") ? "Assigned Jobs To Mechanics" : "Work Assigned to me" }} <i class="fa fa-arrow-circle-right"></i></a>
+                            <a href="#" class="small-box-footer">{{ (Auth::user()->userType != "Certified Professional") ? "Assigned Jobs To Mechanics" : "Work Assigned to me" }} <i class="fa fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
                     <!-- ./col -->
 
-                    @if (Auth::user()->userType == "Licence Holder - Individual" || Auth::user()->userType == "Licence Holder - Business")
+                    @if (Auth::user()->userType != "Certified Professional")
 
                     <div class="col-lg-3 col-xs-6">
                         <!-- small box -->

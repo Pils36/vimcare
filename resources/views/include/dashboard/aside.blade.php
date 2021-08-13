@@ -37,7 +37,7 @@
                         </a>
                         <ul class="treeview-menu">
                             <li class="active"><a href="{{ route('dashboard') }}"><i class="fa fa-circle-o text-red"></i> Dashboard</a></li>
-                            <li><a href="{{ route('MM Homepage') }}"><i class="fa fa-circle-o text-green"></i> Return Home</a></li>
+                            <li><a href="{{ route('LH Homepage') }}"><i class="fa fa-circle-o text-green"></i> Return Home</a></li>
                         </ul>
                     </li>
                     
