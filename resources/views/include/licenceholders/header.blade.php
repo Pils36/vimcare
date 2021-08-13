@@ -9,7 +9,7 @@
                                 <div class="head-icon">
                                     <i class='bx bx-home-smile'></i>
                                 </div>
-                                <a href="#">10 George St. North, Brampton ON L6X1R2, Canada</a>
+                                <a href="#">Professionals File Inc, <br> 10 George St. North, Brampton ON L6X1R2, Canada</a>
                             </li>
                             <li>
                                 <div class="head-icon">
@@ -124,6 +124,9 @@
                                 </a>
                             </li>
                         @endauth
+
+
+                        
                         
                         
                         <li class="nav-item">
@@ -133,7 +136,7 @@
                                 @endauth 
 
                                 @guest
-                                Apply
+                                Get Started
                                     
                                 @endguest
 
@@ -146,12 +149,17 @@
 
                                 <li class="nav-item">
                                     <a href="{{ route('register', 'user=licenceholderindividual') }}" class="nav-link">
-                                        Individual
+                                        Business Owner
                                     </a>
                                 </li>
-                                <li class="nav-item">
+                                {{-- <li class="nav-item">
                                     <a href="{{ route('register', 'user=licenceholderbusiness') }}" class="nav-link">
                                         Business
+                                    </a>
+                                </li> --}}
+                                <li class="nav-item">
+                                    <a href="{{ route('register', 'user=mobilemechanics') }}" class="nav-link">
+                                        Mechanic
                                     </a>
                                 </li>
                                     
@@ -211,21 +219,49 @@
                                 
                             </ul>
                         </li>
+
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                Explore VIMFile
+                                    
+                                <i class='bx bx-chevron-down'></i>
+                            </a>
+                            <ul class="dropdown-menu">
+
+
+                                <li class="nav-item">
+                                    <a href="https://soar.vimfile.com/" target="_blank" class="nav-link">
+                                        SOAR <small>(Save On Auto Repair)</small>
+                                    </a>
+                                </li>
+                                 <li class="nav-item">
+                                    <a href="https://vimfile.com/" target="_blank" class="nav-link">
+                                        BusyWrench
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="https://autodealer.vimfile.com/" target="_blank" class="nav-link">
+                                        Auto dealer
+                                    </a>
+                                </li>
+                                    
+                            </ul>
+                            </li>
                         
-                        @guest
-                            <li class="nav-item">
+                        {{-- @guest --}}
+                            {{-- <li class="nav-item">
                                 <a href="{{ route('login') }}" class="nav-link">
                                     Login
                                 </a>
-                            </li>
+                            </li> --}}
 
-                            <li class="nav-item">
+                            {{-- <li class="nav-item">
                                 <a href="{{ route('home') }}" class="nav-link" style="text-decoration: underline; font-weight: bold;">
                                     Are you a Mobile Mechanic?
                                 </a>
-                            </li>
+                            </li> --}}
 
-                        @endguest
+                        {{-- @endguest --}}
 
                         
 

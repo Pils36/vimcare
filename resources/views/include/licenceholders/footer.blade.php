@@ -34,9 +34,9 @@
                         <li>
                             <a href="{{ route('Ask Expert') }}">Ask Expert</a>
                         </li>
-                        <li>
+                        {{-- <li>
                             <a href="#">Search Available Locations</a>
-                        </li>
+                        </li> --}}
                         <li>
                             <a href="#">Blog</a>
                         </li>
@@ -71,7 +71,7 @@
                             </li> --}}
                             <li>
                                 <i class='bx bx-home-smile'></i>
-                                <a href="#">10 George St. North, Brampton ON L6X1R2, Canada</a>
+                                <a href="#">Professionals File Inc, <br>10 George St. North, Brampton ON L6X1R2, Canada</a>
                             </li>
                             <li>
                                 <i class='bx bx-phone'></i>
