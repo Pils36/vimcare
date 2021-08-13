@@ -9,7 +9,7 @@
                                 <div class="head-icon">
                                     <i class='bx bx-home-smile'></i>
                                 </div>
-                                <a href="#">Professional File Inc <br> 10 George St. North, Brampton ON L6X1R2, Canada</a>
+                                <a href="#">Professionals File Inc, <br> 10 George St. North, Brampton ON L6X1R2, Canada</a>
                             </li>
                             <li>
                                 <div class="head-icon">
@@ -301,27 +301,19 @@
                             </ul>
                         </li>
 
-                             <li class="nav-item">
+
+                        <li class="nav-item">
                             <a href="#" class="nav-link">
-                                @auth
-                                {{ Auth::user()->name }}
-                                @endauth 
-
-                                @guest
-                                Explore VimFile
+                                Explore VIMFile
                                     
-                                @endguest
-
                                 <i class='bx bx-chevron-down'></i>
                             </a>
                             <ul class="dropdown-menu">
 
 
-                                @guest
-
                                 <li class="nav-item">
                                     <a href="https://soar.vimfile.com/" target="_blank" class="nav-link">
-                                        SOAR
+                                        SOAR <small>(Save On Auto Repair)</small>
                                     </a>
                                 </li>
                                  <li class="nav-item">
@@ -335,9 +327,20 @@
                                     </a>
                                 </li>
                                     
-                                @endguest
+                            </ul>
+                            </li>
 
+                        
                                 @auth
+
+                             <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                {{ Auth::user()->name }}
+
+                                <i class='bx bx-chevron-down'></i>
+                            </a>
+                            <ul class="dropdown-menu">
+
                                     <li class="nav-item">
 
                                         @if ($pages == "Home" && (isset(Auth::user()->shopreg) == false || isset(Auth::user()->skillset) == false || isset(Auth::user()->toolset) == false))
@@ -372,19 +375,20 @@
                   
 
                                     </li>
-                                @endauth
-
                                 
                             </ul>
                             </li>
+
+                                @endauth 
+
                         
-                        @guest
+                        {{-- @guest --}}
                             <!--<li class="nav-item">
                                 <a href="{{ route('Licence Holders') }}" class="nav-link" style="text-decoration: underline; font-weight: bold;">
                                     Are you a Licence Holder?
                                 </a>
                             </li>-->
-                        @endguest
+                        {{-- @endguest --}}
                     </ul>
                     {{-- <div class="nav-btn">
                         <a href="#" class="default-btn">

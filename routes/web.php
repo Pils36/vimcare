@@ -33,8 +33,8 @@ Auth::routes();
 Route::group(['prefix' => '/'], function () {
 
     Route::get('/', [HomeController::class, 'index'])->name('home');
-    Route::get('/askexpert', [HomeController::class, 'askexpert'])->name('Ask Expert');
     Route::get('/about', [HomeController::class, 'aboutus'])->name('About Us');
+    Route::get('/askexpert', [HomeController::class, 'askexpert'])->name('Ask Expert');
     Route::get('/quote', [Homecontroller::class, 'quote'])->name('Quote');
     Route::get('/contact', [HomeController::class, 'contactUs'])->name('Contact Us');
 

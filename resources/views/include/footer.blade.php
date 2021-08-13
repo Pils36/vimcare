@@ -34,9 +34,9 @@
                         <li>
                             <a href="{{ route('Ask Expert') }}">Ask Expert</a>
                         </li>
-                        <li>
+                        {{-- <li>
                             <a href="#">Search Available Locations</a>
-                        </li>
+                        </li> --}}
                         <li>
                             <a href="#">Blog</a>
                         </li>

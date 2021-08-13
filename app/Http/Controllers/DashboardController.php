@@ -12,9 +12,7 @@ use App\Traits\ServiceReview;
 class DashboardController extends Controller
 {
 
-    use ShopManagement;
-    use Opportunity;
-    use ServiceReview;
+    use ShopManagement, Opportunity, ServiceReview;
 
     public function index(){
 
@@ -23,6 +21,7 @@ class DashboardController extends Controller
             'servicereviewCount' => $this->serviceReviewCount(Auth::user()->station_name),
         );
 
+        
 
         return view('pages.dashboard.pages.index')->with(['pages' => 'Dashboard', 'data' => $data]);
     }

@@ -27,7 +27,7 @@
 
 
 
-<div class="choose-area pt-100 pb-70">
+<div class="choose-area pt-100 pb-70 disp-0">
     <div class="container">
         <div class="section-title text-center">
             <span class="span-bg">Why Choose Us?</span>
@@ -75,10 +75,10 @@
 </div>
 
 
-<div class="about-area pb-70">
+<div class="choose-area pt-100 pb-70">
     <div class="container">
         <div class="row align-items-center">
-            <div class="col-lg-6">
+            <div class="col-lg-4">
                 <div class="about-img-2">
                     <img src="https://t4.ftcdn.net/jpg/02/81/05/25/360_F_281052553_dMoDs4HihMMdU2hYV6njaMkQ9TGXATjd.jpg" alt="Images">
                 </div>
@@ -86,44 +86,12 @@
             <div class="col-lg-6">
                 <div class="about-content">
                     <div class="section-title">
-                        <span class="span-bg">Services</span>
-                        {{-- <h2>We Have 20+ Years of Service Experience for You</h2> --}}
+                        <p>
+                            VimCareMobileMechs is a mobile mechanics service which allows for vehicle maintenance in more places outside of the garage. You can request a quote from us for our wide range of auto repair services.
+                        </p>
                         
                     </div>
-                    <ul>
-                        <li>
-                            <i class='bx bx-check-circle'></i>
-                            Oil Change
-                        </li>
-                        <li>
-                            <i class='bx bx-check-circle'></i>
-                            Car Is Not Starting Diagnostic
-                        </li>
-                        <li>
-                            <i class='bx bx-check-circle'></i>
-                            Check Engine Light Diagnostic
-                        </li>
-                        <li>
-                            <i class='bx bx-check-circle'></i>
-                            Pre-Purchase Vehicle Inspection
-                        </li>
-                        <li>
-                            <i class='bx bx-check-circle'></i>
-                            Battery Replacement
-                        </li>
-                        <li>
-                            <i class='bx bx-check-circle'></i>
-                            Brakepad Replacement
-                        </li>
-                        <li>
-                            <i class='bx bx-check-circle'></i>
-                            Tire Change
-                        </li>
-                        <li>
-                            <i class='bx bx-check-circle'></i>
-                            More...
-                        </li>
-                    </ul>
+                    
                 </div>
             </div>
         </div>

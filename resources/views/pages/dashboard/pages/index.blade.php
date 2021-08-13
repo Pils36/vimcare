@@ -148,9 +148,28 @@
                     </div>
                     <!-- ./col -->
 
+
+                    
+
                     
                         
                     @endif
+
+                    <div class="col-lg-3 col-xs-6">
+                        <!-- small box -->
+                        <div class="small-box bg-orange">
+                            <div class="inner">
+                                <h3>&nbsp;</h3>
+
+                                <p>Ordering System</p>
+                            </div>
+                            <div class="icon">
+                                <i class="ion ion-stats-bars"></i>
+                            </div>
+                            <a href="https://www.partstech.com/solutions/repair-shops" target="_blank" class="small-box-footer">Order for Parts <i class="fa fa-arrow-circle-right"></i></a>
+                        </div>
+                    </div>
+                    <!-- ./col -->
 
 
                 </div>

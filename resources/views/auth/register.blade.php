@@ -43,6 +43,11 @@
                     <div class="user-all-form">
                         <div class="contact-form">
                             <div class="section-title text-center">
+
+                                <h5 class="text-center text-danger">
+                                    Already have an account?
+                                            <a class="btn btn-primary btn-block" type="button" href="{{ route('login') }}">Sign In</a> 
+                                </h5>
                                 {{--  <h2>Create an Account!</h2>  --}}
                                 <h5 class="text-center">
                                     Fill out the form below to begin registering as one our of newest mechanics to the platform! 

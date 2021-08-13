@@ -90,10 +90,10 @@
                         <i class='bx bx-help-circle'></i>
                     </div>
                     <h3>Auto Repairs Made Seamless</h3>
-                    <p>Use our fully featured website or mobile app to connect with a mechanic, set-up an appointment, and start driving smoothly again.</p>
-                    <a href="#" class="read-more">
+                    <p style="text-align: left !important;">Use our fully featured website or mobile app to connect with a mechanic, set-up an appointment, and start driving smoothly again.</p>
+                    {{-- <a href="{{ route('About Us') }}" class="read-more">
                         Read More <i class="bx bx-right-arrow-alt"></i>
-                    </a>
+                    </a> --}}
                 </div>
             </div>
             <div class="col-lg-4 col-sm-6">
@@ -102,8 +102,8 @@
                         <i class='bx bx-time'></i>
                     </div>
                     <h3>Get A Quote</h3>
-                    <p>We have the best service for you to make and this is one of the best service.</p>
-                    <a href="#" class="read-more">
+                    <p style="text-align: left !important;">We have the best service for you to make and this is one of the best service.</p>
+                    <a href="{{ route('Quote') }}" class="read-more">
                         Request a Quote <i class="right-icon bx bx-right-arrow-alt"></i>
                     </a>
                 </div>
@@ -114,16 +114,15 @@
                         <i class='bx bx-bulb'></i>
                     </div>
                     <h3>Satisfaction Guaranteed</h3>
-                    <p>We include a 12-month / 19,000 Km warranty with any and all of our automotive repair services. </p>
-                    <a href="#" class="read-more">
+                    <p style="text-align: left !important;">We include a 12-month / 19,000 Km warranty with any and all of our automotive repair services. </p>
+                    {{-- <a href="#" class="read-more">
                         Read More <i class="right-icon bx bx-right-arrow-alt"></i>
-                    </a>
+                    </a> --}}
                 </div>
             </div>
         </div>
     </div>
 </div>
-
 
 <div class="about-area pb-70">
     <div class="container">
