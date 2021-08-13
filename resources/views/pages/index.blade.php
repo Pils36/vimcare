@@ -27,7 +27,7 @@
 
                     @guest
                         <div class="banner-btn">
-                            <a href="{{ route('login') }}" class="get-btn">Get Started</a>
+                            <a href="https://soar.vimfile.com/" class="get-btn">Get Started</a>
                         </div>
                     @endguest
 
@@ -103,8 +103,19 @@
                     </div>
                     <h3>Get A Quote</h3>
                     <p style="text-align: left !important;">We have the best service for you to make and this is one of the best service.</p>
-                    <a href="{{ route('Quote') }}" class="read-more">
-                        Request a Quote <i class="right-icon bx bx-right-arrow-alt"></i>
+                    <p>Download Mobile App</p>
+                    <div class="row">
+                        <div class="col-md-6"><a href="https://play.google.com/store/apps/details?id=com.ex.vimfile&ah=Ozv2osEnvf0c0AgZAqXzvZpxJrM">
+         <img alt="Play Store" src="http://assets.stickpng.com/images/5a902dbf7f96951c82922875.png">
+      </a></div>
+                        <div class="col-md-6">
+                            <a href="https://play.google.com/store/apps/details?id=com.ex.vimfile&ah=Ozv2osEnvf0c0AgZAqXzvZpxJrM">
+         <img alt="App Store" src="https://tphmn.com/wp-content/uploads/2018/05/5847e95fcef1014c0b5e4822.png">
+      </a>
+                        </div>
+                    </div>
+                    <a href="https://soar.vimfile.com/" class="read-more mt-3">
+                        Request Web <i class="right-icon bx bx-right-arrow-alt"></i>
                     </a>
                 </div>
             </div>
