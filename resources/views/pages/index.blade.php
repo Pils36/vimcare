@@ -109,7 +109,7 @@
          <img alt="Play Store" src="https://res.cloudinary.com/pilstech/image/upload/v1628878106/download_hjx4sf.png">
       </a></div>
                         <div class="col-md-6">
-                            <a href="https://play.google.com/store/apps/details?id=com.ex.vimfile&ah=Ozv2osEnvf0c0AgZAqXzvZpxJrM">
+                            <a href="https://apps.apple.com/ng/app/vimfile/id1573763340">
          <img alt="App Store" src="https://res.cloudinary.com/pilstech/image/upload/v1628877468/5847e95fcef1014c0b5e4822_ppen36.png">
       </a>
                         </div>
@@ -134,6 +134,8 @@
         </div>
     </div>
 </div>
+
+
 
 
 <div class="about-area pb-70">
