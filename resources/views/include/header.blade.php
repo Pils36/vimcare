@@ -302,36 +302,6 @@
                                 
                             </ul>
                         </li>
-
-
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                Explore VIMFile
-                                    
-                                <i class='bx bx-chevron-down'></i>
-                            </a>
-                            <ul class="dropdown-menu">
-
-
-                                <li class="nav-item">
-                                    <a href="https://soar.vimfile.com/" target="_blank" class="nav-link">
-                                        SOAR <small>(Save On Auto Repair)</small>
-                                    </a>
-                                </li>
-                                 <li class="nav-item">
-                                    <a href="https://vimfile.com/" target="_blank" class="nav-link">
-                                        BusyWrench
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="https://autodealer.vimfile.com/" target="_blank" class="nav-link">
-                                        Auto dealer
-                                    </a>
-                                </li>
-                                    
-                            </ul>
-                            </li>
-
                         
                                 @auth
 
