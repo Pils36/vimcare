@@ -135,42 +135,44 @@
     </div>
 </div>
 
+{{-- Start Explore Vimfile  --}}
+<div class="container mt-3">
     <h1 class="text-center">Explore Vimfile</h1>
     <div class="row">
-<div class="card-body">
-     <div class="col-md-4">
+    <div class="card-body">
+     <div class="col-sm-4">
          <div class="rol-4" style="width: 18rem;">
             <a href="https://vimfile.com/" target="blank">
   <img src="https://res.cloudinary.com/pilstech/image/upload/v1600186031/bw_ncbz2n.png" style="height: 140px">
             </a>
   <div class="card-body">
-    <p class="card-text" style="text-align: center">Click here to procced</p>
+    <a type="button" class="btn btn-primary" style="text-align: center" href="https://vimfile.com/" target="blank">Click here to procced</a>
   </div>
         </div>
      </div>
     </div>
 
     <div class="card-body">
-     <div class="col-md-4">
+     <div class="col-sm-4">
          <div class=" rol-4" style="width: 18rem;">
             <a href="https://soar.vimfile.com/" target="blank">
   <img src="https://res.cloudinary.com/pilstech/image/upload/v1631033012/soar2_t1rf4m.png"  style="height: 140px">
             </a>
   <div class="card-body">
-    <p class="card-text" style="text-align: center">Click here to procced</p>
+  <a type="button" class="btn btn-primary"  style="text-align: center" href="https://soar.vimfile.com/" target="blank">Click here to procced</a>
   </div>
         </div>
      </div>
     </div>
 
         <div class="card-body">
-     <div class="col-md-4">
+     <div class="col-sm-4">
          <div class="rol-4" style="width: 18rem;">
-         <a href="https://vimcare.vimfile.com/" target="blank">
+         <a href="https://autodealer.vimfile.com/" target="blank">
   <img src="https://res.cloudinary.com/pilstech/image/upload/v1631030099/vimcare_fysihn.png"  style="height: 140px">
          </a>
   <div class="card-body">
-    <p class="card-text" style="text-align: center">Click here to procced</p>
+   <a type="button" class="btn btn-primary" style="text-align: center"  href="https://autodealer.vimfile.com/" target="blank">Click here to procced</a>
   </div>
         </div>
      </div>
@@ -183,6 +185,11 @@
 
 
 </div>
+
+
+{{-- Stop Explore Vimfile --}}
+
+
 {{-- <div class="col-lg-4 col-md-6 col-xs-12">
 
     <a href="#"><img src="https://res.cloudinary.com/pilstech/image/upload/v1600186031/bw_ncbz2n.png"></a>
