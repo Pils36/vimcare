@@ -134,39 +134,67 @@
         </div>
     </div>
 </div>
-
-<br>
-
-<div class="choose-area pt-100 pb-70">
-    <div class="container">
-        <div class="section-title text-center">
-            <span class="span-bga">Explore</span>
-            {{-- <h2>We Have the Plan for You to Give You Best </h2> --}}
+<div class="card">
+    <h1 class="text-center">Explore Vimfile</h1>
+    <div class="row">
+<div class="card-body">
+     <div class="col-md-4">
+         <div class="rol-4" style="width: 18rem;">
+            <a href="https://vimfile.com/" target="blank">
+  <img src="https://res.cloudinary.com/pilstech/image/upload/v1600186031/bw_ncbz2n.png" class="card-img-top" alt="...">
+            </a>
+  <div class="card-body">
+    <p class="card-text" style="text-align: center">Click here to procced</p>
+  </div>
         </div>
-        <div class="row pt-45">
-            <div class="col-lg-4 col-sm-6">
-                <div class="choose-item" style="height: 100%">
-                    <a href="https://vimfile.com/"><img src="https://res.cloudinary.com/pilstech/image/upload/v1600186031/bw_ncbz2n.png"style="padding-top: 100px"></a>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6">
-                <div class="choose-item" style="height: 100%">
-                    
-                        <a href="https://soar.vimfile.com/"><img src="https://res.cloudinary.com/pilstech/image/upload/v1630949161/soar1_aiky8h.png" style=" background-color: black"></a>
-                      
-                    
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 ">
-                <div class="choose-item" style="height: 100%;">
-                    <a href="https://autodealer.vimfile.com/"><img src="https://res.cloudinary.com/pilstech/image/upload/v1615462252/vimlogo_eh8dqn.jpg" style="padding-top: 80px"></a>
-                </div>
-            </div>
-        </div>
+     </div>
     </div>
+
+    <div class="card-body">
+     <div class="col-md-4">
+         <div class=" rol-4" style="width: 18rem;">
+            <a href="https://soar.vimfile.com/" target="blank">
+  <img src="https://res.cloudinary.com/pilstech/image/upload/v1631033012/soar2_t1rf4m.png" class="card-img-top" alt="...">
+            </a>
+  <div class="card-body">
+    <p class="card-text" style="text-align: center">Click here to procced</p>
+  </div>
+        </div>
+     </div>
+    </div>
+
+        <div class="card-body">
+     <div class="col-md-4">
+         <div class="rol-4" style="width: 18rem;">
+         <a href="https://autodealer.vimfile.com/" target="blank">
+  <img src="https://res.cloudinary.com/pilstech/image/upload/v1631030099/vimcare_fysihn.png" class="card-img-top" alt="...">
+         </a>
+  <div class="card-body">
+    <p class="card-text" style="text-align: center">Click here to procced</p>
+  </div>
+        </div>
+     </div>
+    </div>
+
+    </div>
+    
+
+
+
+
 </div>
+{{-- <div class="col-lg-4 col-md-6 col-xs-12">
 
-
+    <a href="#"><img src="https://res.cloudinary.com/pilstech/image/upload/v1600186031/bw_ncbz2n.png"></a>
+</div>
+<div class="col-lg-4 col-md-6 col-xs-12">
+    <a href="#"><img src="https://res.cloudinary.com/pilstech/image/upload/v1600186031/bw_ncbz2n.png"></a>
+</div>
+<div class="col-lg-4 col-md-6 col-xs-12">
+    <a href="#"><img src="https://res.cloudinary.com/pilstech/image/upload/v1600186031/bw_ncbz2n.png"></a>
+</div> --}}
+ <br>
+<br>
 
 <div class="about-area pb-70">
     <div class="container">
