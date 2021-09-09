@@ -134,7 +134,7 @@
         </div>
     </div>
 </div>
-<div class="card">
+
     <h1 class="text-center">Explore Vimfile</h1>
     <div class="row">
 <div class="card-body">
