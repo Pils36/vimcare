@@ -141,7 +141,7 @@
      <div class="col-md-4">
          <div class="rol-4" style="width: 18rem;">
             <a href="https://vimfile.com/" target="blank">
-  <img src="https://res.cloudinary.com/pilstech/image/upload/v1600186031/bw_ncbz2n.png" class="card-img-top" alt="...">
+  <img src="https://res.cloudinary.com/pilstech/image/upload/v1600186031/bw_ncbz2n.png" style="height: 140px">
             </a>
   <div class="card-body">
     <p class="card-text" style="text-align: center">Click here to procced</p>
@@ -154,7 +154,7 @@
      <div class="col-md-4">
          <div class=" rol-4" style="width: 18rem;">
             <a href="https://soar.vimfile.com/" target="blank">
-  <img src="https://res.cloudinary.com/pilstech/image/upload/v1631033012/soar2_t1rf4m.png" class="card-img-top" alt="...">
+  <img src="https://res.cloudinary.com/pilstech/image/upload/v1631033012/soar2_t1rf4m.png"  style="height: 140px">
             </a>
   <div class="card-body">
     <p class="card-text" style="text-align: center">Click here to procced</p>
@@ -166,8 +166,8 @@
         <div class="card-body">
      <div class="col-md-4">
          <div class="rol-4" style="width: 18rem;">
-         <a href="https://autodealer.vimfile.com/" target="blank">
-  <img src="https://res.cloudinary.com/pilstech/image/upload/v1631030099/vimcare_fysihn.png" class="card-img-top" alt="...">
+         <a href="https://vimcare.vimfile.com/" target="blank">
+  <img src="https://res.cloudinary.com/pilstech/image/upload/v1631030099/vimcare_fysihn.png"  style="height: 140px">
          </a>
   <div class="card-body">
     <p class="card-text" style="text-align: center">Click here to procced</p>
