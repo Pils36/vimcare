@@ -1,5 +1,3 @@
-
-
 @extends('layouts.dashboard')
 
 @section('content')
@@ -28,12 +26,12 @@
                             <div class="inner">
                                 <h3>&nbsp;</h3>
 
-                                <p>Vehicle Maintenance</p>
+                                <p>Invoice</p>
                             </div>
                             <div class="icon">
                                 <i class="ion ion-pie-graph"></i>
                             </div>
-                            <a href="{{ route('vehicle maintenance') }}" class="small-box-footer">Record vehicle information <i class="fa fa-arrow-circle-right"></i></a>
+                            <a href="{{ route('invoices') }}" class="small-box-footer">Invoice <i class="fa fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
                     <!-- ./col -->
@@ -43,12 +41,12 @@
                             <div class="inner">
                                 <h3>&nbsp;</h3>
 
-                                <p>Manage Inventory</p>
+                                <p>Receive Payment</p>
                             </div>
                             <div class="icon">
                                 <i class="ion ion-stats-bars"></i>
                             </div>
-                            <a href="{{ route('manageinventory') }}" class="small-box-footer">Manage Inventory <i class="fa fa-arrow-circle-right"></i></a>
+                            <a href="{{ route('receive payment') }}" class="small-box-footer">Receive Payment <i class="fa fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
                     <!-- ./col -->
@@ -58,12 +56,12 @@
                             <div class="inner">
                                 <h3>&nbsp;</h3>
 
-                                <p>Manage Labour</p>
+                                <p>View Paid Invoices</p>
                             </div>
                             <div class="icon">
                                 <i class="ion ion-pie-graph"></i>
                             </div>
-                            <a href="{{ route('managelabour') }}" class="small-box-footer">Manage Labours <i class="fa fa-arrow-circle-right"></i></a>
+                            <a href="{{ route('view paid invoices') }}" class="small-box-footer">View Paid Invoices <i class="fa fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
                     <!-- ./col -->
@@ -73,45 +71,16 @@
                             <div class="inner">
                                 <h3>&nbsp;</h3>
 
-                                <p>Revenue</p>
+                                <p>View Unpaid Invoices</p>
                             </div>
                             <div class="icon">
                                 <i class="ion ion-stats-bars"></i>
                             </div>
-                            <a href="{{ route('revenue') }}" class="small-box-footer">Sort out revenues <i class="fa fa-arrow-circle-right"></i></a>
+                            <a href="{{ route('view unpaid invoices') }}" class="small-box-footer">View Unpaid Invoices <i class="fa fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
                     <!-- ./col -->
-                    <div class="col-lg-3 col-xs-6">
-                        <!-- small box -->
-                        <div class="small-box bg-red">
-                            <div class="inner">
-                                <h3>&nbsp;</h3>
 
-                                <p>Expenditure</p>
-                            </div>
-                            <div class="icon">
-                                <i class="ion ion-pie-graph"></i>
-                            </div>
-                            <a href="{{ route('expenditure') }}" class="small-box-footer">Sort our expenditures <i class="fa fa-arrow-circle-right"></i></a>
-                        </div>
-                    </div>
-                    <!-- ./col -->
-                    <div class="col-lg-3 col-xs-6">
-                        <!-- small box -->
-                        <div class="small-box bg-orange">
-                            <div class="inner">
-                                <h3>&nbsp;</h3>
-
-                                <p>Business Report</p>
-                            </div>
-                            <div class="icon">
-                                <i class="ion ion-stats-bars"></i>
-                            </div>
-                            <a href="{{ route('businessreport') }}" class="small-box-footer">Keep track of your business <i class="fa fa-arrow-circle-right"></i></a>
-                        </div>
-                    </div>
-                    <!-- ./col -->
                 </div>
                 <!-- /.row -->
 

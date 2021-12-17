@@ -17,11 +17,11 @@ class DashboardController extends Controller
     public function index(){
 
         $data = array(
-            'opportunityCount' => $this->opportunityCount(Auth::user()->station_name, Auth::user()->state),
-            'servicereviewCount' => $this->serviceReviewCount(Auth::user()->station_name),
+            'opportunityCount' => $this->opportunityCount('Auth'::user()->station_name, 'Auth'::user()->state),
+            'servicereviewCount' => $this->serviceReviewCount('Auth'::user()->station_name),
         );
 
-        
+
 
         return view('pages.dashboard.pages.index')->with(['pages' => 'Dashboard', 'data' => $data]);
     }
@@ -29,12 +29,12 @@ class DashboardController extends Controller
     public function opportunity(){
 
         $data = array(
-            'appointment' => $this->appointment(Auth::user()->station_name),
-            'opportunityPost' => $this->opportunityPosts(Auth::user()->state),
-            'approvedEstimate' => $this->approvedEstimates(Auth::user()->station_name),
-            'submitedEstimate' => $this->submittedEstimates(Auth::user()->station_name),
-            'jobDone' => $this->jobsDone(Auth::user()->station_name),
-            'phoneAppointment' => $this->phoneAppointmentList(Auth::user()->station_name),
+            'appointment' => $this->appointment('Auth'::user()->station_name),
+            'opportunityPost' => $this->opportunityPosts('Auth'::user()->state),
+            'approvedEstimate' => $this->approvedEstimates('Auth'::user()->station_name),
+            'submitedEstimate' => $this->submittedEstimates('Auth'::user()->station_name),
+            'jobDone' => $this->jobsDone('Auth'::user()->station_name),
+            'phoneAppointment' => $this->phoneAppointmentList('Auth'::user()->station_name),
         );
 
         return view('pages.dashboard.pages.opportunity')->with(['pages' => 'Opportunity', 'data' => $data]);
@@ -43,7 +43,7 @@ class DashboardController extends Controller
     public function review(){
 
         $data = array(
-            'myreviews' => $this->viewServices(Auth::user()->station_name, Auth::user()->busID),
+            'myreviews' => $this->viewServices('Auth'::user()->station_name, 'Auth'::user()->busID),
         );
 
 
@@ -66,4 +66,31 @@ class DashboardController extends Controller
     public function createTicket(){
         return view('pages.dashboard.pages.createticket')->with(['pages' => 'Create Ticket']);
     }
+
+    public function assignedWorkOrder(){
+        return view('pages.dashboard.assignedworkorder')->with(['pages' => 'Assigned work order']);
+    }
+
+    public function dispatchedScheduling(){
+        return view('pages.dashboard.dispatachedschdulling')->with(['pages' => 'Dispatched Scheduling']);
+    }
+
+    public function manageInventory(){
+        return view('pages.dashboard.manageInventory')->with(['pages' => 'Manage Inventory']);
+    }
+
+    public function manageLabour(){
+        return view('pages.dashboard.manageLabour')->with(['pages' => 'Manage Labour']);
+    }
+
+    public function revenue(){
+        return view('pages.dashboard.revenue')->with(['pages' => 'Revenue']);
+    }
+
+    public function expenditure(){
+        return view('pages.dashboard.expenditure')->with(['pages' => 'expenditure']);
+    }
+
+
+
 }

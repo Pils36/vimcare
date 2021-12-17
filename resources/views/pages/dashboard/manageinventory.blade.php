@@ -5,6 +5,7 @@
 @section('content')
 
 
+
         <div class="content-wrapper">
             <!-- Content Header (Page header) -->
             <section class="content-header">
@@ -28,12 +29,12 @@
                             <div class="inner">
                                 <h3>&nbsp;</h3>
 
-                                <p>Vehicle Maintenance</p>
+                                <p>Create Vendor</p>
                             </div>
                             <div class="icon">
                                 <i class="ion ion-pie-graph"></i>
                             </div>
-                            <a href="{{ route('vehicle maintenance') }}" class="small-box-footer">Record vehicle information <i class="fa fa-arrow-circle-right"></i></a>
+                            <a href="{{ route('create vendor') }}" class="small-box-footer">Create Vendor <i class="fa fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
                     <!-- ./col -->
@@ -43,12 +44,12 @@
                             <div class="inner">
                                 <h3>&nbsp;</h3>
 
-                                <p>Manage Inventory</p>
+                                <p>Create Category</p>
                             </div>
                             <div class="icon">
                                 <i class="ion ion-stats-bars"></i>
                             </div>
-                            <a href="{{ route('manageinventory') }}" class="small-box-footer">Manage Inventory <i class="fa fa-arrow-circle-right"></i></a>
+                            <a href="{{ route('create category') }}" class="small-box-footer">Create Category <i class="fa fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
                     <!-- ./col -->
@@ -58,12 +59,12 @@
                             <div class="inner">
                                 <h3>&nbsp;</h3>
 
-                                <p>Manage Labour</p>
+                                <p>Create Inventory Item</p>
                             </div>
                             <div class="icon">
                                 <i class="ion ion-pie-graph"></i>
                             </div>
-                            <a href="{{ route('managelabour') }}" class="small-box-footer">Manage Labours <i class="fa fa-arrow-circle-right"></i></a>
+                            <a href="{{ route('create inventory item') }}" class="small-box-footer">Create Inventory Item <i class="fa fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
                     <!-- ./col -->
@@ -73,12 +74,12 @@
                             <div class="inner">
                                 <h3>&nbsp;</h3>
 
-                                <p>Revenue</p>
+                                <p>Create Purchase Order</p>
                             </div>
                             <div class="icon">
                                 <i class="ion ion-stats-bars"></i>
                             </div>
-                            <a href="{{ route('revenue') }}" class="small-box-footer">Sort out revenues <i class="fa fa-arrow-circle-right"></i></a>
+                            <a href="{{ route('create purchase order') }}" class="small-box-footer">Create Purchase Order <i class="fa fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
                     <!-- ./col -->
@@ -88,12 +89,12 @@
                             <div class="inner">
                                 <h3>&nbsp;</h3>
 
-                                <p>Expenditure</p>
+                                <p>Manage Puechase Order</p>
                             </div>
                             <div class="icon">
                                 <i class="ion ion-pie-graph"></i>
                             </div>
-                            <a href="{{ route('expenditure') }}" class="small-box-footer">Sort our expenditures <i class="fa fa-arrow-circle-right"></i></a>
+                            <a href="{{ route('manage purchase order') }}" class="small-box-footer">Manage Purchase Order <i class="fa fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
                     <!-- ./col -->
@@ -103,12 +104,42 @@
                             <div class="inner">
                                 <h3>&nbsp;</h3>
 
-                                <p>Business Report</p>
+                                <p>Pay Vendor</p>
                             </div>
                             <div class="icon">
                                 <i class="ion ion-stats-bars"></i>
                             </div>
-                            <a href="{{ route('businessreport') }}" class="small-box-footer">Keep track of your business <i class="fa fa-arrow-circle-right"></i></a>
+                            <a href="{{ route('pay vendors') }}" class="small-box-footer">Pay Vendors <i class="fa fa-arrow-circle-right"></i></a>
+                        </div>
+                    </div>
+                    <!-- ./col -->
+                    <div class="col-lg-3 col-xs-6">
+                        <!-- small box -->
+                        <div class="small-box bg-green">
+                            <div class="inner">
+                                <h3>&nbsp;</h3>
+
+                                <p>Inventory Record</p>
+                            </div>
+                            <div class="icon">
+                                <i class="ion ion-stats-bars"></i>
+                            </div>
+                            <a href="{{ route('inventory record') }}" class="small-box-footer">Inventory Record <i class="fa fa-arrow-circle-right"></i></a>
+                        </div>
+                    </div>
+                    <!-- ./col -->
+                    <div class="col-lg-3 col-xs-6">
+                        <!-- small box -->
+                        <div class="small-box bg-aqua">
+                            <div class="inner">
+                                <h3>&nbsp;</h3>
+
+                                <p>Update Vendor's Profile</p>
+                            </div>
+                            <div class="icon">
+                                <i class="ion ion-stats-bars"></i>
+                            </div>
+                            <a href="{{ route('update vendors profile') }}" class="small-box-footer">Update Vendors Profile <i class="fa fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
                     <!-- ./col -->

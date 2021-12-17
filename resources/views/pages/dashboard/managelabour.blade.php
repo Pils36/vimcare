@@ -1,5 +1,3 @@
-
-
 @extends('layouts.dashboard')
 
 @section('content')
@@ -28,12 +26,12 @@
                             <div class="inner">
                                 <h3>&nbsp;</h3>
 
-                                <p>Prepare Estimate & Work Order</p>
+                                <p>Manage Labour Schedule</p>
                             </div>
                             <div class="icon">
                                 <i class="ion ion-pie-graph"></i>
                             </div>
-                            <a href="{{ route('prepare estimates') }}" class="small-box-footer">Prepare Maintenance Record <i class="fa fa-arrow-circle-right"></i></a>
+                            <a href="{{ route('manage labour schedule') }}" class="small-box-footer">Manage Labour Schedule <i class="fa fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
                     <!-- ./col -->
@@ -43,12 +41,12 @@
                             <div class="inner">
                                 <h3>&nbsp;</h3>
 
-                                <p>Find Maintenance Record</p>
+                                <p>Create Labour Category</p>
                             </div>
                             <div class="icon">
                                 <i class="ion ion-stats-bars"></i>
                             </div>
-                            <a href="{{ route('find maintenance record') }}" class="small-box-footer">Find Maintenance Record <i class="fa fa-arrow-circle-right"></i></a>
+                            <a href="{{ route('create labour category') }}" class="small-box-footer">Create Labour Category <i class="fa fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
                     <!-- ./col -->
@@ -58,12 +56,12 @@
                             <div class="inner">
                                 <h3>&nbsp;</h3>
 
-                                <p>Register a Vehicle</p>
+                                <p>Create Labour Record</p>
                             </div>
                             <div class="icon">
                                 <i class="ion ion-pie-graph"></i>
                             </div>
-                            <a href="{{ route('register vehicle') }}" class="small-box-footer">Register a Vehicle <i class="fa fa-arrow-circle-right"></i></a>
+                            <a href="{{ route('create labour record') }}" class="small-box-footer">Create Labour Record <i class="fa fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
                     <!-- ./col -->
@@ -73,12 +71,12 @@
                             <div class="inner">
                                 <h3>&nbsp;</h3>
 
-                                <p>iVIM</p>
+                                <p>Add Labour</p>
                             </div>
                             <div class="icon">
                                 <i class="ion ion-stats-bars"></i>
                             </div>
-                            <a href="{{ route('ivim') }}" class="small-box-footer">Check Vehicle Maintenance Record <i class="fa fa-arrow-circle-right"></i></a>
+                            <a href="{{ route('add labour') }}" class="small-box-footer">Add Labour <i class="fa fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
                     <!-- ./col -->
@@ -88,12 +86,12 @@
                             <div class="inner">
                                 <h3>&nbsp;</h3>
 
-                                <p>Performance</p>
+                                <p>Manage Time Sheet</p>
                             </div>
                             <div class="icon">
                                 <i class="ion ion-pie-graph"></i>
                             </div>
-                            <a href="{{ route('performance') }}" class="small-box-footer">Check vehicle performance <i class="fa fa-arrow-circle-right"></i></a>
+                            <a href="{{ route('manage time sheet') }}" class="small-box-footer">Manage Time Sheet <i class="fa fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
                     <!-- ./col -->
@@ -103,45 +101,75 @@
                             <div class="inner">
                                 <h3>&nbsp;</h3>
 
-                                <p>Client List</p>
+                                <p>List Technicians</p>
                             </div>
                             <div class="icon">
                                 <i class="ion ion-stats-bars"></i>
                             </div>
-                            <a href="{{ route('client list') }}" class="small-box-footer">See your avaliable clients <i class="fa fa-arrow-circle-right"></i></a>
+                            <a href="{{ route('list technicians') }}" class="small-box-footer">List Technicians <i class="fa fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
                     <!-- ./col -->
                     <div class="col-lg-3 col-xs-6">
                         <!-- small box -->
-                        <div class="small-box bg-purple">
+                        <div class="small-box bg-green">
                             <div class="inner">
                                 <h3>&nbsp;</h3>
 
-                                <p>Unprocessed Transactions</p>
+                                <p>Clocking Sheet</p>
                             </div>
                             <div class="icon">
-                                <i class="ion ion-stats-bars"></i>
+                                <i class="ion ion-pie-graph"></i>
                             </div>
-                            <a href="{{ route('unprocessed transactions') }}" class="small-box-footer">Maintenance rec. yet to be completed <i class="fa fa-arrow-circle-right"></i></a>
+                            <a href="{{ route('clocking sheet') }}" class="small-box-footer">Clocking Sheet <i class="fa fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
-                    <!-- ./col -->
+                    <!-- /.row -->
                     <div class="col-lg-3 col-xs-6">
                         <!-- small box -->
-                        <div class="small-box bg-purple">
+                        <div class="small-box bg-aqua">
                             <div class="inner">
-                                <h3>{{ $data['completeTrans'] }}</h3>
+                                <h3>&nbsp;</h3>
 
-                                <p>Completed Transactions</p>
+                                <p>Pay Labour</p>
                             </div>
                             <div class="icon">
                                 <i class="ion ion-stats-bars"></i>
                             </div>
-                            <a href="{{ route('completed transactions') }}" class="small-box-footer">Completed Maintenance Record <i class="fa fa-arrow-circle-right"></i></a>
+                            <a href="{{ route('pay labour') }}" class="small-box-footer">Pay Labour <i class="fa fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
-                    <!-- ./col -->
+                    <!-- /.row -->
+                    <div class="col-lg-3 col-xs-6">
+                        <!-- small box -->
+                        <div class="small-box bg-orange">
+                            <div class="inner">
+                                <h3>&nbsp;</h3>
+
+                                <p>Pay Schedule</p>
+                            </div>
+                            <div class="icon">
+                                <i class="ion ion-pie-graph"></i>
+                            </div>
+                            <a href="{{ route('pay schedule') }}" class="small-box-footer">Pay Schedule <i class="fa fa-arrow-circle-right"></i></a>
+                        </div>
+                    </div>
+                    <!-- /.row -->
+                    <div class="col-lg-3 col-xs-6">
+                        <!-- small box -->
+                        <div class="small-box bg-red">
+                            <div class="inner">
+                                <h3>&nbsp;</h3>
+
+                                <p>Labour Pay Stub</p>
+                            </div>
+                            <div class="icon">
+                                <i class="ion ion-stats-bars"></i>
+                            </div>
+                            <a href="{{ route('labour pay stub') }}" class="small-box-footer">Labour Pay Stub <i class="fa fa-arrow-circle-right"></i></a>
+                        </div>
+                    </div>
+                    <!-- /.row -->
                 </div>
                 <!-- /.row -->
 

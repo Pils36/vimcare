@@ -4,7 +4,7 @@
 
 @section('content')
 
-    
+
 
         <div class="content-wrapper">
             <!-- Content Header (Page header) -->
@@ -125,7 +125,7 @@
                             <div class="icon">
                                 <i class="ion ion-stats-bars"></i>
                             </div>
-                            <a href="#" class="small-box-footer">{{ (Auth::user()->userType != "Certified Professional") ? "Assigned Jobs To Mechanics" : "Work Assigned to me" }} <i class="fa fa-arrow-circle-right"></i></a>
+                            <a href="{{ route('assignedworkorder') }}" class="small-box-footer">{{ (Auth::user()->userType != "Certified Professional") ? "Assigned Jobs To Mechanics" : "Work Assigned to me" }} <i class="fa fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
                     <!-- ./col -->
@@ -143,16 +143,16 @@
                             <div class="icon">
                                 <i class="ion ion-stats-bars"></i>
                             </div>
-                            <a href="#" class="small-box-footer">Dispatched and Scheduling <i class="fa fa-arrow-circle-right"></i></a>
+                            <a href="{{ route('dispatachedschdulling') }}" class="small-box-footer">Dispatched and Scheduling <i class="fa fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
                     <!-- ./col -->
 
 
-                    
 
-                    
-                        
+
+
+
                     @endif
 
                     <div class="col-lg-3 col-xs-6">

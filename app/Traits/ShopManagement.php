@@ -20,11 +20,12 @@ trait ShopManagement{
             'findvehicle' => $getVm->getmaintenanceRecord($station),
             'findivim' => $getVm->getIvim($station),
             'clients' => $getVm->myClientList($station),
+            'transactions' => $getVm->unprocessedTransactions($station),
         );
 
         return $data;
 
-    } 
+    }
 
 
 }

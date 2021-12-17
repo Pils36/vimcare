@@ -44,6 +44,12 @@
 <script src="{{ asset('dashboard/dist/js/pages/dashboard.js') }}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{ asset('dashboard/dist/js/demo.js') }}"></script>
+<script src="{{ asset('js/country-state-select.js') }}"></script>
+
+
+<script language="javascript">
+  populateCountries("country", "state");
+</script>
 
 
 <script>
